@@ -1,0 +1,459 @@
+<title>Fishbowl</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: a gallery of runs. Home = what Fishbowl is, the topics, how it works. Topic = the direction, the Visionary's
+   take, every final piece by style. Piece = the animation, the numbers, then the whole process as a vertical timeline. */
+:root {
+  --ground: #07031A;   /* deep hyperspace navy */
+  --panel: #120A30;    /* raised surfaces */
+  --line: #2C2160;     /* hairlines */
+  --ink: #FFF1D6;      /* cream text */
+  --muted: #B8ACDF;    /* secondary text */
+  --magenta: #FF2E93;
+  --gold: #FFD23F;
+  --cyan: #19D3C5;
+  --violet: #A98BFF;   /* the Visionary */
+  --violet-deep: #1E1147;
+  --ring-blue: #1F4FD8;
+  --font-display: 'Shrikhand', 'Cooper Black', Georgia, serif;
+  --font-body: 'Figtree', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 16px/1.6 var(--font-body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--gold); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow { font: 700 12px/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* top bar */
+.top { border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.logo { font: 400 26px/1 var(--font-display); color: var(--gold); text-decoration: none; text-shadow: 2px 2px 0 var(--magenta); }
+.top nav { display: flex; gap: 18px; font: 700 13px var(--font-mono); }
+.top nav a { color: var(--muted); text-decoration: none; padding: 10px 0; }
+.top nav a:hover { color: var(--ink); }
+.crumbs { font: 13px var(--font-mono); color: var(--muted); padding-block: 22px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.crumbs a { color: var(--muted); }
+
+/* shared */
+section.block { padding-block: 40px; border-top: 1px solid var(--line); }
+section.block:first-of-type { border-top: 0; }
+h2.sec { font: 400 clamp(28px, 4.6vw, 42px)/1.1 var(--font-display); margin-bottom: 18px; }
+.lede { max-width: 64ch; font-size: clamp(17px, 2vw, 19px); }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 28px; font: 400 13px/1.3 var(--font-mono); color: var(--muted); }
+.stats b { display: block; font: 700 24px/1.15 var(--font-mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+.chip { display: inline-block; font: 700 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; padding: 5px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.chip.s1 { color: var(--cyan); } .chip.s2 { color: var(--magenta); } .chip.wait { color: var(--muted); } .chip.done { color: var(--gold); } .chip.fav { color: var(--violet); }
+.media { position: relative; overflow: hidden; background: var(--panel); }
+.media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.round { border-radius: 50%; box-shadow: 0 0 0 3px var(--ink), 0 0 0 7px var(--ring-blue), 0 0 0 9px #0B0A2E; }
+.squareish { border-radius: 16px; }
+.loading { color: var(--muted); font: 13px var(--font-mono); padding: 40px 0; }
+
+/* home */
+.hero { padding-block: 54px 30px; display: grid; gap: 20px; }
+.hero h1 { font: 400 clamp(64px, 13vw, 150px)/.95 var(--font-display); color: var(--gold);
+  text-shadow: 4px 4px 0 var(--magenta), 8px 8px 0 #8B5CF6, 12px 12px 0 var(--cyan); }
+.topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 26px; }
+.topic { display: grid; gap: 14px; text-decoration: none; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+.topic:hover { border-color: var(--gold); }
+.topic .cover { aspect-ratio: 1; border-radius: 12px; }
+.topic .strip { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+.topic .strip img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; display: block; }
+.topic h3 { font: 400 28px/1.1 var(--font-display); }
+.topic p { color: var(--muted); font-size: 15px; }
+.topic.soon { border-style: dashed; color: var(--muted); align-content: center; min-height: 200px; text-align: center; }
+.cast { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; margin-bottom: 34px; }
+.cast div { border-top: 3px solid var(--c, var(--gold)); padding-top: 12px; }
+.cast h3 { font: 700 18px/1.3 var(--font-body); margin-bottom: 6px; }
+.cast p { color: var(--muted); font-size: 15px; }
+ol.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: step; max-width: 820px; }
+ol.flow li { counter-increment: step; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
+ol.flow li::before { content: counter(step); font: 400 30px/1 var(--font-display); color: var(--magenta); }
+ol.flow h3 { font: 700 18px/1.3 var(--font-body); margin-bottom: 4px; }
+ol.flow p { color: var(--muted); max-width: 64ch; }
+
+/* topic */
+.topic-hero { padding-block: 26px 30px; display: grid; gap: 18px; }
+.topic-hero h1 { font: 400 clamp(42px, 8vw, 84px)/1 var(--font-display); color: var(--gold); text-shadow: 3px 3px 0 var(--magenta), 6px 6px 0 #8B5CF6; }
+.direction { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; max-width: 820px; counter-reset: d; }
+.direction li { counter-increment: d; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
+.direction li::before { content: counter(d, decimal-leading-zero); font: 700 13px/1.9 var(--font-mono); color: var(--gold); }
+.direction p { font-size: 17px; }
+.direction small { display: block; color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+.writeup { display: grid; gap: 14px; max-width: 70ch; }
+.writeup p { font-size: clamp(16px, 1.9vw, 18px); }
+.final { display: grid; gap: 22px; }
+.final .podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+@media (max-width: 760px) { .final .podium { grid-template-columns: minmax(0, 1fr); } }
+.final .podium a { display: grid; gap: 10px; text-decoration: none; color: var(--ink); }
+.final .podium .media { width: 100%; aspect-ratio: 1; }
+.final .podium h3 { font: 400 24px/1.1 var(--font-display); }
+.final .podium .place { font: 700 12px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--violet); }
+.final .podium .first .place { color: var(--gold); }
+.final .podium p { font-size: 14.5px; }
+.judges { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; }
+.judges div { border-top: 2px solid var(--line); padding-top: 10px; font-size: 14px; }
+.judges b { display: block; font: 700 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.judges ol { margin: 0; padding-left: 18px; display: grid; gap: 2px; }
+.visionary { background: var(--violet-deep); border-radius: 18px; padding: 26px; display: grid; gap: 16px; }
+.visionary h2 { font: 400 clamp(26px, 4vw, 38px)/1.1 var(--font-display); color: var(--violet); }
+.visionary .report { font-size: 18px; line-height: 1.6; font-style: italic; max-width: 70ch; }
+.visionary .faves { display: flex; flex-wrap: wrap; gap: 10px; }
+.visionary .faves a { color: var(--ink); text-decoration: none; border: 1px solid var(--violet); border-radius: 999px; padding: 8px 14px; font: 700 13px var(--font-mono); }
+.band-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-bottom: 20px; }
+.band-head h2 { font: 400 clamp(28px, 4.8vw, 44px)/1.1 var(--font-display); }
+.band-head p { color: var(--muted); max-width: 60ch; }
+.band-0 .band-head h2 { color: var(--cyan); } .band-1 .band-head h2 { color: var(--gold); } .band-2 .band-head h2 { color: var(--magenta); } .band-3 .band-head h2 { color: var(--violet); }
+.pieces { display: flex; flex-wrap: wrap; justify-content: center; gap: 34px 28px; }
+.pieces > .pcard { width: calc((100% - 56px) / 3); }
+@media (max-width: 900px) { .pieces > .pcard { width: calc((100% - 28px) / 2); } }
+@media (max-width: 460px) { .pieces > .pcard { width: 100%; } }
+.pcard { display: grid; gap: 10px; align-content: start; text-decoration: none; color: var(--ink); }
+.pcard .media { width: 100%; aspect-ratio: 1; }
+.pcard h3 { font: 400 24px/1.1 var(--font-display); margin-top: 6px; }
+.pcard .meta { font: 12px/1.5 var(--font-mono); color: var(--muted); }
+.pcard p { font-size: 14.5px; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.pcard:hover h3 { color: var(--gold); }
+
+/* piece */
+.piece-hero { padding-block: 26px 34px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+@media (max-width: 820px) { .piece-hero { grid-template-columns: minmax(0, 1fr); } }
+.piece-hero .media { width: min(100%, 520px, 68vh); aspect-ratio: 1; justify-self: center; }
+.piece-hero h1 { font: 400 clamp(38px, 6vw, 64px)/1.05 var(--font-display); color: var(--gold); }
+.piece-hero .info { display: grid; gap: 16px; }
+.piece-hero .meta { font: 13px var(--font-mono); color: var(--muted); }
+.playbtn { position: absolute; inset: auto auto 12px 50%; transform: translateX(-50%); font: 700 13px var(--font-mono); background: var(--ground); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; min-height: 44px; cursor: pointer; }
+.split { display: grid; gap: 6px; }
+.split .bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--panel); }
+.split .bar span { display: block; height: 100%; }
+.split .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 12px var(--font-mono); color: var(--muted); }
+.split .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.asks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.asks li { padding-left: 14px; border-left: 2px solid var(--gold); }
+.timeline { display: grid; gap: 22px; }
+.trow { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 700px) { .trow { grid-template-columns: minmax(0, 1fr); } }
+.trow img { width: 100%; max-width: 300px; aspect-ratio: 1; border-radius: 12px; display: block; background: var(--panel); }
+.trow .txt { display: grid; gap: 10px; }
+.trow .lbl { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font: 12px var(--font-mono); color: var(--muted); }
+.trow .lbl b { color: var(--ink); font-weight: 700; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.dot.s1 { background: var(--cyan); } .dot.s2 { background: var(--magenta); }
+.trow dl { margin: 0; display: grid; gap: 8px; max-width: 68ch; }
+.trow dt { font: 700 11px/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.trow dd { margin: 3px 0 0; }
+.trow .none { color: var(--muted); font-style: italic; }
+.vblock { margin-left: min(324px, 0px + 324px); background: var(--violet-deep); border: 1px solid #3B2A7A; border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; max-width: 760px; }
+@media (max-width: 700px) { .vblock { margin-left: 0; } }
+.vblock .who { font: 700 11px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--violet); }
+.vblock .seen { font-size: 16px; font-style: italic; }
+.vblock ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14.5px; }
+.vblock .keep { font-size: 14px; color: var(--muted); }
+.finish { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; }
+.finish figure { width: min(100%, 520px, 68vh); }
+.finish figure { margin: 0; display: grid; gap: 8px; }
+.finish .media { width: 100%; aspect-ratio: 1; }
+.finish figcaption { font: 12px var(--font-mono); color: var(--muted); }
+.rounds { display: grid; gap: 30px; margin-top: 18px; }
+.rcard { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 18px; }
+.round-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.round-head h3 { font: 400 26px/1.1 var(--font-display); }
+.round-head .lbl { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font: 12px var(--font-mono); color: var(--muted); }
+.round-body { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 28px; align-items: center; }
+@media (max-width: 800px) { .round-body { grid-template-columns: minmax(0, 1fr); } }
+.rcard dl { margin: 0; display: grid; gap: 10px; max-width: 64ch; }
+.rcard dt { font: 700 11px/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.rcard dd { margin: 4px 0 0; }
+.rcard .none { color: var(--muted); font-style: italic; }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; justify-items: center; align-items: start; }
+.thumb { width: min(100%, 480px); justify-self: center; }
+.thumb { display: grid; gap: 6px; background: none; border: 0; padding: 0; color: var(--muted); cursor: zoom-in; text-align: left; font: 11px/1.3 var(--font-mono); }
+.thumb img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 10px; display: block; background: var(--ground); }
+.thumb:hover img { outline: 2px solid var(--gold); outline-offset: 2px; }
+.rounds .vblock { margin-left: 0; max-width: none; }
+.closeups summary { cursor: pointer; font: 700 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+.closeups .thumbs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); margin-top: 8px; }
+.tl-video { width: min(100%, 560px); aspect-ratio: 1; border-radius: 16px; background: var(--panel); display: block; }
+.zoomable { cursor: zoom-in; }
+.tokens-note { max-width: 70ch; display: grid; gap: 10px; color: var(--ink); }
+.tokens-note p { font-size: 16px; }
+.tokens-note .eq { font: 13px/1.6 var(--font-mono); color: var(--muted); background: var(--panel); border-radius: 12px; padding: 14px 16px; }
+.why-link { font: 12px var(--font-mono); }
+dialog.zoom { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); max-height: 96vh; }
+dialog.zoom::backdrop { background: rgba(7, 3, 26, .92); }
+dialog.zoom .zwrap { display: grid; gap: 10px; justify-items: center; }
+dialog.zoom img { max-width: min(96vw, 1000px); max-height: 82vh; width: auto; height: auto; border-radius: 12px; display: block; }
+dialog.zoom .zbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; font: 13px var(--font-mono); color: var(--ink); }
+dialog.zoom button { font: 700 13px var(--font-mono); background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; min-height: 44px; cursor: pointer; }
+dialog.zoom button:disabled { opacity: .4; cursor: default; }
+footer { padding-block: 40px 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; margin-top: 30px; }
+footer p { max-width: 72ch; }
+@media (prefers-reduced-motion: no-preference) { .pcard .media img { transition: transform .2s ease; } .pcard:hover .media img { transform: scale(1.03); } }
+</style>
+
+<header class="top"><div class="wrap"><a class="logo" href="#">Fishbowl</a><nav aria-label="Site"><a href="#">Topics</a><a href="#how">How it's made</a></nav></div></header>
+<main class="wrap" id="view"><p class="loading">Loading…</p></main>
+<footer><div class="wrap"><p>Fishbowl is an AI art studio run by SavesFish, built and orchestrated with Claude Opus 5.5 in Claude Code's Ultracode mode. Every piece is a single SVG drawn by a program its AI artist wrote and rewrote; every render is kept, and every change is explained by the artist who made it. Token counts come from the agents' own logs (see <a href="#tokens">how tokens are counted</a>). <span id="built"></span></p></div></footer>
+
+<dialog id="zoom" class="zoom" aria-label="Bigger view">
+  <div class="zwrap">
+    <img id="zoom-img" alt="">
+    <div class="zbar"><button type="button" id="zoom-prev">Previous</button><span id="zoom-cap"></span><button type="button" id="zoom-next">Next</button><button type="button" id="zoom-close">Close</button></div>
+  </div>
+</dialog>
+<script>
+const $ = s => document.querySelector(s);
+const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (v == null) continue; if (k === 'class') e.className = v; else if (k === 'text') e.textContent = v; else e.setAttribute(k, v); } kids.forEach(k => k != null && k !== false && e.append(k)); return e; };
+const fmt = n => !n ? '0' : n >= 1e9 ? (n / 1e9).toFixed(2) + 'B' : n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'K' : String(n);
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cache = {};
+const get = async path => cache[path] ??= fetch(path).then(r => { if (!r.ok) throw new Error(path); return r.json(); });
+const isBadge = m => /badge/i.test(m.kind || '');
+const statusChip = s => el('span', { class: 'chip ' + (s === 'finished' ? 'done' : s === 'second artist' ? 's2' : s === 'first artist' ? 's1' : 'wait'), text: s });
+const stat = (v, label) => el('span', {}, el('b', { text: v }), label);
+
+function media(still, anim, shape, alt, opts = {}) {
+  const box = el('div', { class: 'media ' + shape });
+  const img = el('img', { src: (anim && !reduced && opts.autoplay) ? anim : still, alt: alt || '', loading: opts.eager ? 'eager' : 'lazy' });
+  box.append(img);
+  if (anim && opts.hover && !reduced) { box.addEventListener('mouseenter', () => { img.src = anim; }); box.addEventListener('mouseleave', () => { img.src = still; }); }
+  if (anim && reduced && opts.autoplay) { const b = el('button', { class: 'playbtn', type: 'button', text: 'Play animation' }); b.onclick = () => { img.src = anim; b.remove(); }; box.append(b); }
+  return box;
+}
+
+const HOW = {
+  cast: [
+    ['SavesFish', 'Runs the studio: brings inspiration art and a few suggestions, and watches every render arrive. Influences the work; the AI makes the calls.', 'var(--gold)'],
+    ['The orchestrator', 'Claude Opus 5.5 in Claude Code\'s Ultracode mode: it builds the tooling, writes every artist\'s prompt, runs the team as parallel workflows, relays SavesFish\'s notes and keeps the run on track.', 'var(--ink)'],
+    ['The artists', 'One Claude Opus 5.5 agent per piece, painting by writing code: a program that draws thousands of marks into one SVG. Each makes its own creative decisions, lettering included.', 'var(--cyan)'],
+    ['The second artists', 'A fresh agent takes over each piece mid-way, names its biggest weaknesses with no attachment to the draft, and pushes it further.', 'var(--magenta)'],
+    ['The critic', 'An AI watcher with a persona chosen for each run: for the psychedelic run, the Visionary, a painter deep in a DMT trip. It studies each new render, suggests where to push, and at the end makes the final call.', 'var(--violet)'],
+  ],
+  flow: [
+    ['SavesFish\'s tooling', 'SavesFish\'s unique tooling and prompts allow Claude to create these masterpieces: a render-and-look loop, a rule checker, lettering helpers, a live gallery of every render, a critic, a judging panel and this site. It all runs on Claude Opus 5.5 in Claude Code\'s Ultracode mode, which orchestrates dozens of agents at once.'],
+    ['Inspiration', 'Each run starts from a few pieces of inspiration art and SavesFish\'s suggestions: what the work is for and what it should feel like.'],
+    ['One shared brief', 'SavesFish\'s suggestions, a visual vocabulary for the style (for the psychedelic run: the chrysanthemum, hyperspace, machine elves, eyes everywhere, self-transforming geometry) and the file rules.'],
+    ['A prompt for every artist', 'Claude Opus 5.5, acting as the studio\'s orchestrator, turns SavesFish\'s suggestions into one prompt per artist. Every prompt carries the shared brief word for word, then that artist\'s own assignment: a subject (here, a different fish species for each), one style register with its rules, a working title and a starting idea to riff on, plus the process every artist follows. Splitting subjects and styles this way gives a real range instead of fifteen versions of one guess. Second artists get the same brief, the first artist\'s notes, and an instruction to name the six biggest weaknesses before changing anything.'],
+    ['Render, look, redraw', 'Every round the artist renders at full size, at thumbnail size and as close-ups, writes down what it saw and why it is changing things, then changes the code.'],
+    ['Fresh eyes', 'A second artist takes over and drives the piece through more rounds.'],
+    ['Influence, not control', 'SavesFish\'s suggestions and the critic\'s notes land in files each artist reads before every round. They shape the next render, but the artist decides what to take.'],
+    ['Every change explained', 'Before each render the artist writes what it saw, what it is changing and why. Every render is kept, with the tokens it took.'],
+    ['The AI makes the final call', 'Three independent AI judges rank every piece, through the style\'s own bar, craft, and how well it works for its purpose. The critic weighs them and names the winner.'],
+  ],
+};
+
+function home(runs) {
+  const v = $('#view'); v.textContent = '';
+  v.append(el('section', { class: 'hero' },
+    el('span', { class: 'eyebrow', text: 'an AI art studio run by SavesFish' }), el('h1', { text: 'Fishbowl' }),
+    el('p', { class: 'lede', text: 'An AI art project you watch from the outside. A team of AI artists paints by writing code, a critic with a persona chosen for the style pushes them further, and AI judges make the final call. SavesFish brings inspiration and suggestions; the AI decides. Every render is kept and every change is explained, so you can follow each piece from first sketch to finished work.' }),
+    el('div', { class: 'stats num' }, stat(runs.length, 'topics'), stat(runs.reduce((a, r) => a + r.pieces, 0), 'pieces'), stat(runs.reduce((a, r) => a + r.renders, 0), 'renders'), stat(fmt(runs.reduce((a, r) => a + (r.tokens?.fresh || 0), 0)), 'tokens'))));
+  const grid = el('div', { class: 'topics' });
+  for (const r of runs) {
+    const cover = r.cover?.still ? media('data/' + r.cover.still, r.cover.anim ? 'data/' + r.cover.anim : null, 'cover', '', { autoplay: true }) : el('div', { class: 'media cover' });
+    const strip = el('div', { class: 'strip' }, ...(r.strip || []).map(s => el('img', { src: 'data/' + s, alt: '', loading: 'lazy' })));
+    grid.append(el('a', { class: 'topic', href: '#' + r.id }, cover, strip, el('h3', { text: r.title }), el('p', { text: r.subtitle }),
+      el('div', { class: 'stats num' }, stat(r.pieces, 'pieces'), stat(r.renders, 'renders'), stat(fmt(r.tokens?.fresh), 'tokens'))));
+  }
+  grid.append(el('div', { class: 'topic soon' }, el('p', { text: 'Next: landscapes, fractal walls and more.' })));
+  v.append(el('section', { class: 'block', id: 'topics' }, el('h2', { class: 'sec', text: 'Topics' }), grid));
+  const how = el('section', { class: 'block', id: 'how' }, el('h2', { class: 'sec', text: "How it's made" }));
+  how.append(el('div', { class: 'cast' }, ...HOW.cast.map(([t, d, c]) => { const x = el('div', {}, el('h3', { text: t }), el('p', { text: d })); x.style.setProperty('--c', c); return x; })));
+  how.append(el('ol', { class: 'flow' }, ...HOW.flow.map(([t, d]) => el('li', {}, el('div', {}, el('h3', { text: t }), el('p', { text: d }))))));
+  v.append(how);
+  v.append(el('section', { class: 'block', id: 'tokens' }, el('h2', { class: 'sec', text: 'How tokens are counted' }),
+    el('div', { class: 'tokens-note' },
+      el('p', { text: 'Every piece shows two numbers. Tokens are the units a language model reads and writes, roughly three quarters of a word each.' }),
+      el('p', { text: '"Tokens" is the new work: the fresh instructions an artist received, the new material it took in (its code, the renders it looked at, its notes), and everything it wrote back.' }),
+      el('p', { text: '"With re-reads" adds the part that grows fast. An artist works in steps, and at every step the model reads its whole session so far again: the brief, the code it has written, the images it has looked at, its own notes. Almost all of that is the same as the step before, so it is served from a cache instead of being processed from scratch, which is much cheaper, but it is still read. A long session therefore re-reads its own history hundreds of times, which is why a piece that took about 3 million tokens of new work can show 100 million or more with re-reads.' }),
+      el('p', { class: 'eq', text: 'tokens = fresh input + new context written to the cache + output\nwith re-reads = tokens + context read back from the cache at every step' }))));
+}
+
+function topic(m) {
+  const v = $('#view'); v.textContent = '';
+  const shape = isBadge(m) ? 'round' : 'squareish';
+  v.append(el('nav', { class: 'crumbs', 'aria-label': 'Breadcrumb' }, el('a', { href: '#', text: 'Fishbowl' }), el('span', { text: '/' }), el('span', { text: m.title })));
+  v.append(el('section', { class: 'topic-hero' }, el('span', { class: 'eyebrow', text: m.kind || '' }), el('h1', { text: m.title }),
+    el('div', { class: 'writeup' }, ...(m.writeup || [m.description]).map(t => el('p', { text: t }))),
+    el('div', { class: 'stats num' }, stat(m.pieces.length, 'pieces'), stat(m.renders, 'full renders'), stat(m.visions, 'visions'), stat(fmt(m.tokens.fresh), 'tokens'), stat(fmt(m.tokens.all), 'with re-reads'))));
+  const v0 = m.visionary;
+  if (v0?.winner) {
+    const byId = id => m.pieces.find(x => x.id === id);
+    const sets = (v0.set_winners || []).slice();
+    sets.sort((x, y) => (y.id === v0.winner.id) - (x.id === v0.winner.id));
+    const podium = el('div', { class: 'podium' }, ...sets.map((f, i) => { const p = byId(f.id); if (!p) return null; const best = p.id === v0.winner.id;
+      return el('a', { class: best ? 'first' : '', href: `#${m.id}.${p.id}` },
+        el('span', { class: 'place', text: (best ? 'Best of show · ' : '') + 'Best in ' + f.set }),
+        media(`data/${m.id}/${p.final}`, p.anim ? `data/${m.id}/${p.anim}` : null, shape, p.title, { autoplay: true }),
+        el('h3', { text: p.title }), el('p', { text: best ? v0.winner.why : f.why })); }));
+    const judges = el('div', { class: 'judges' }, ...(v0.judges || []).map(j => el('div', {}, el('b', { text: j.lens }),
+      el('ol', {}, ...(j.best_per_set || []).map(r => el('li', { text: `${r.set}: ${byId(r.id)?.title || r.id}` })),
+        j.overall ? el('li', { text: `Overall: ${byId(j.overall.id)?.title || j.overall.id}` }) : null))));
+    v.append(el('section', { class: 'block' }, el('h2', { class: 'sec', text: 'The final call' }),
+      el('div', { class: 'final' }, el('p', { class: 'lede', text: v0.report }), podium,
+        (v0.judges || []).length ? el('div', {}, el('p', { class: 'eyebrow', text: "The judges' votes, before the Visionary decided" }), judges) : null)));
+  }
+  for (const [g, info] of Object.entries(m.groups).map((x, i) => [x[0], { ...x[1], i }])) {
+    const list = m.pieces.filter(p => p.group === g);
+    if (!list.length) continue;
+    const sec = el('section', { class: 'block band-' + (info.i % 4), id: g }, el('div', { class: 'band-head' }, el('h2', { text: info.title }), el('p', { text: info.blurb })));
+    sec.append(el('div', { class: 'pieces' }, ...list.map(p => el('a', { class: 'pcard', href: `#${m.id}.${p.id}` },
+      p.final ? media(`data/${m.id}/${p.final}`, p.anim ? `data/${m.id}/${p.anim}` : null, shape, `${p.title}`, { hover: true }) : el('div', { class: 'media ' + shape }),
+      el('h3', { text: p.title }), (m.visionary?.set_winners || []).some(f => f.id === p.id) ? el('span', { class: 'chip ' + (m.visionary.winner?.id === p.id ? 'done' : 'fav'), text: m.visionary.winner?.id === p.id ? 'Best of show' : 'Best in set' }) : null, el('div', { class: 'meta num', text: `${p.fish} · ${plural(p.count, 'render')} · ${fmt(p.tokens.fresh)} tokens` }),
+      p.description ? el('p', { text: p.description }) : null))));
+    v.append(sec);
+  }
+}
+
+let zoomList = [], zoomIdx = 0, zoomLarge = null, zoomTitle = '';
+async function openZoom(list, i, title, largePath) {
+  zoomList = list; zoomIdx = i; zoomTitle = title; zoomLarge = null;
+  showZoom();
+  const d = $('#zoom'); if (!d.open) d.showModal();
+  if (largePath) { try { zoomLarge = await get(largePath); showZoom(); } catch {} }
+}
+function showZoom() {
+  const it = zoomList[zoomIdx];
+  $('#zoom-img').src = (zoomLarge && it.n != null && zoomLarge[it.n]) || it.src;
+  $('#zoom-img').alt = `${zoomTitle}, ${it.label}`;
+  $('#zoom-cap').textContent = `${zoomTitle} · ${it.label}`;
+  $('#zoom-prev').disabled = zoomIdx === 0; $('#zoom-next').disabled = zoomIdx === zoomList.length - 1;
+}
+
+async function piece(m, p) {
+  const v = $('#view'); v.textContent = '';
+  const shape = isBadge(m) ? 'round' : 'squareish';
+  const still = p.final_svg ? `data/${m.id}/${p.final_svg}` : p.final ? `data/${m.id}/${p.final}` : null;
+  v.append(el('nav', { class: 'crumbs', 'aria-label': 'Breadcrumb' }, el('a', { href: '#', text: 'Fishbowl' }), el('span', { text: '/' }), el('a', { href: '#' + m.id, text: m.title }), el('span', { text: '/' }), el('span', { text: p.title })));
+  const fav = (m.visionary?.set_winners || []).find(f => f.id === p.id);
+  const rank = (m.visionary?.ranking || []).indexOf(p.id) + 1;
+  const isWinner = m.visionary?.winner?.id === p.id;
+  const roles = p.tokens.byRole || {};
+  const parts = [['draw', 'First artist', 'var(--cyan)'], ['polish', 'Second artist', 'var(--magenta)'], ['continue', 'Second artist, resumed', '#FF8FC2'], ['vision', 'The critic', 'var(--violet)'], ['notes', 'Note writer', 'var(--muted)'], ['animate', 'Animator', 'var(--gold)']].filter(([k]) => roles[k]);
+  const total = parts.reduce((a, [k]) => a + roles[k], 0) || 1;
+  const info = el('div', { class: 'info' }, el('span', { class: 'eyebrow', text: `${p.style} · ${p.fish}` }), el('h1', { text: p.title }),
+    p.description ? el('p', { class: 'lede', text: p.description }) : null,
+    el('div', {}, statusChip(p.status), rank ? ' ' : null, isWinner ? el('span', { class: 'chip done', text: 'Best of show' }) : null, fav ? ' ' : null, fav ? el('span', { class: 'chip fav', text: 'Best in ' + fav.set }) : null, rank ? ' ' : null, rank ? el('span', { class: 'chip wait', text: `Ranked ${rank} of ${m.pieces.length}` }) : null),
+    el('div', { class: 'stats num' }, stat(p.count, 'full renders'), stat(p.visions, 'critic notes'), stat(fmt(p.tokens.fresh), 'tokens'), stat(fmt(p.tokens.all), 'with re-reads'), stat(fmt(p.tokens.output), 'written')),
+    el('a', { class: 'why-link', href: '#tokens', text: 'Why two numbers?' }),
+    parts.length ? el('div', { class: 'split' }, el('div', { class: 'bar', role: 'img', 'aria-label': 'Tokens by role' }, ...parts.map(([k, , c]) => { const x = el('span'); x.style.width = (100 * roles[k] / total) + '%'; x.style.background = c; return x; })),
+      el('div', { class: 'legend' }, ...parts.map(([k, t, c]) => { const i = el('i'); i.style.background = c; return el('span', {}, i, `${t} ${fmt(roles[k])}`); }))) : null,
+    (isWinner || fav) ? el('p', { class: 'meta', text: 'The final call: ' + (isWinner ? m.visionary.winner.why : fav.why) }) : null);
+  const heroMedia = still ? media(still, p.anim ? `data/${m.id}/${p.anim}` : null, shape + ' zoomable', `${p.title}${p.anim ? ', animated' : ''}`, { autoplay: true, eager: true }) : el('div', { class: 'media ' + shape });
+  if (still) heroMedia.addEventListener('click', () => openZoom([{ src: still, label: 'the finished piece' }], 0, p.title));
+  v.append(el('section', { class: 'piece-hero' }, heroMedia, info));
+  if (p.timelapse) v.append(el('section', { class: 'block' }, el('h2', { class: 'sec', text: 'Timelapse' }),
+    el('p', { class: 'eyebrow', text: `every render, first to last` }),
+    el('video', { class: 'tl-video', src: `data/${m.id}/${p.timelapse}`, controls: '', muted: '', loop: '', playsinline: '', preload: 'metadata', poster: p.final ? `data/${m.id}/${p.final}` : null })));
+  const sec = el('section', { class: 'block' }, el('h2', { class: 'sec', text: 'The whole process' }), el('p', { class: 'loading', text: `Loading ${plural(p.count, 'render')}…` }));
+  v.append(sec);
+  let d;
+  try { d = await get(`data/${m.id}/${p.id}.json`); } catch { sec.lastChild.textContent = 'The renders could not load. Reload the page to try again.'; return; }
+  sec.lastChild.remove();
+  sec.append(el('p', { class: 'eyebrow', text: `${plural(d.renders.length, 'render')} in rounds${d.visions.length ? `, ${plural(d.visions.length, 'critic note')}` : ''}, oldest first. Tap any image to see it bigger.` }));
+  const zoomItems = d.renders.map((r, i) => ({ src: r.img, n: r.n, label: `render ${i + 1} of ${d.renders.length}${r.note ? ', round ' + r.note.round : ''}, artist ${r.stage}` }));
+  const largePath = `data/${m.id}/${p.id}-large.json`;
+  const blocks = [];
+  d.renders.forEach((r, i) => {
+    const key = r.note ? `${r.stage}:${r.note.round}` : (r.repeat && blocks.length ? blocks[blocks.length - 1].key : `${r.stage}:solo${i}`);
+    if (!blocks.length || blocks[blocks.length - 1].key !== key) blocks.push({ key, stage: r.stage, note: r.note, items: [] });
+    blocks[blocks.length - 1].items.push({ r, i });
+  });
+  const vAfter = {};
+  for (const x of d.visions) (vAfter[x.after] ||= []).push(x);
+  const visionBlock = x => el('div', { class: 'vblock' }, el('span', { class: 'who', text: `The critic · note ${x.k}${x.time ? ' · ' + x.time : ''}` }),
+    el('p', { class: 'seen', text: x.seen }), x.suggestions.length ? el('ol', {}, ...x.suggestions.map(t => el('li', { text: t }))) : null, x.keep ? el('p', { class: 'keep', text: 'Keep: ' + x.keep }) : null);
+  const list = el('div', { class: 'rounds' });
+  blocks.forEach(b => {
+    const toks = b.items.reduce((a, { r }) => a + (r.tokens?.fresh || 0), 0);
+    const first = b.items[0].r, last = b.items[b.items.length - 1].r;
+    const head = el('div', { class: 'round-head' }, el('h3', { text: b.note ? `Round ${b.note.round}` : 'Render' }),
+      el('div', { class: 'lbl num' }, el('span', { class: 'dot s' + b.stage }), el('span', { text: `artist ${b.stage}` }),
+        el('span', { text: first.time === last.time ? first.time : `${first.time} to ${last.time}` }), el('span', { text: plural(b.items.length, 'render') }),
+        toks ? el('span', { text: `${fmt(toks)} tokens` }) : null));
+    const dl = el('dl');
+    if (b.note) for (const [k, t] of [['idea', 'The idea'], ['saw', 'Saw'], ['changing', 'Changing'], ['why', 'Why'], ['visionary', "The critic's part"]]) if (b.note[k]) dl.append(el('div', {}, el('dt', { text: t }), el('dd', { text: b.note[k] })));
+    const thumbs = el('div', { class: 'thumbs' }, ...b.items.map(({ r, i }) => {
+      const t = el('button', { class: 'thumb', type: 'button', 'aria-label': `See render ${i + 1} bigger` }, el('img', { src: r.img, alt: `${p.title}, render ${i + 1}`, loading: 'lazy', width: '200', height: '200' }),
+        el('span', { class: 'num', text: `#${i + 1} · ${r.time}${r.tokens ? ' · ' + fmt(r.tokens.fresh) : ''}` }));
+      t.onclick = () => openZoom(zoomItems, i, p.title, largePath);
+      return t;
+    }));
+    const card = el('article', { class: 'rcard' }, head, el('div', { class: 'round-body' }, b.note ? dl : el('p', { class: 'none', text: 'No note for this round.' }), thumbs));
+    const zc = b.items.reduce((a, { r }) => a + (r.zooms || 0), 0);
+    if (zc) {
+      const det = el('details', { class: 'closeups' }, el('summary', { text: `Close-ups the artist checked (${zc})` }));
+      det.addEventListener('toggle', async () => {
+        if (!det.open || det.dataset.loaded) return;
+        det.dataset.loaded = '1';
+        const box = el('div', { class: 'thumbs' }, el('p', { class: 'loading', text: 'Loading close-ups…' }));
+        det.append(box);
+        try {
+          const z = await get(`data/${m.id}/${p.id}-zooms.json`);
+          const items = b.items.flatMap(({ r, i }) => (z[r.n] || []).map((src, k) => ({ src, label: `close-up ${k + 1} after render ${i + 1}` })));
+          box.textContent = '';
+          items.forEach((it, k) => { const t = el('button', { class: 'thumb', type: 'button', 'aria-label': `See ${it.label} bigger` }, el('img', { src: it.src, alt: `${p.title}, ${it.label}`, loading: 'lazy' }), el('span', { text: it.label })); t.onclick = () => openZoom(items, k, p.title); box.append(t); });
+        } catch { box.textContent = 'The close-ups could not load.'; }
+      });
+      card.append(det);
+    }
+    list.append(card);
+    const ns = b.items.map(({ r }) => r.n);
+    const lo = Math.min(...ns);
+    const nextBlock = blocks[blocks.indexOf(b) + 1];
+    const hi = nextBlock ? nextBlock.items[0].r.n : Infinity;
+    for (const [after, xs] of Object.entries(vAfter)) if (+after >= lo && +after < hi) xs.forEach(x => list.append(visionBlock(x)));
+  });
+  sec.append(list);
+  if (still) {
+    const big = media(still, null, shape + ' zoomable', `${p.title}, final`);
+    big.addEventListener('click', () => openZoom([{ src: still, label: 'the finished piece' }], 0, p.title));
+    const fin = el('div', { class: 'finish' }, el('figure', {}, big, el('figcaption', { text: 'The finished piece, as drawn: tap to see it full size' })));
+    if (p.anim) fin.append(el('figure', {}, media(still, `data/${m.id}/${p.anim}`, shape, `${p.title}, animated`, { autoplay: true }), el('figcaption', { text: 'Animation, good limit: trippy but controlled, made from its own code' })));
+    if (p.trip) fin.append(el('figure', {}, media(still, `data/${m.id}/${p.trip}`, shape, `${p.title}, animated, pushed further`, { autoplay: true }), el('figcaption', { text: 'Animation, pushed: the same loop taken a big step further' })));
+    v.append(el('section', { class: 'block' }, el('h2', { class: 'sec', text: 'The finished piece' }), fin));
+  }
+}
+
+async function route() {
+  const h = location.hash.replace(/^#/, '');
+  try {
+    if (!h || h === 'how' || h === 'topics' || h === 'tokens') {
+      const runs = await get('data/runs.json');
+      home(runs);
+      $('#built').textContent = runs.length ? `Last updated ${runs.map(r => r.built).sort().pop()}.` : '';
+      if (h) document.getElementById(h)?.scrollIntoView(); else scrollTo(0, 0);
+      return;
+    }
+    const [rid, pid] = h.split('.');
+    const m = await get(`data/${rid}/manifest.json`);
+    $('#built').textContent = `Last updated ${m.built}.`;
+    if (!pid) { topic(m); scrollTo(0, 0); return; }
+    const p = m.pieces.find(x => x.id === pid);
+    if (!p) { topic(m); return; }
+    scrollTo(0, 0);
+    await piece(m, p);
+  } catch (e) {
+    $('#view').textContent = '';
+    $('#view').append(el('p', { class: 'loading', text: 'This page could not load. Check the address, or go back to the topics.' }), el('a', { href: '#', text: 'All topics' }));
+  }
+}
+$('#zoom-prev').onclick = () => { if (zoomIdx > 0) { zoomIdx--; showZoom(); } };
+$('#zoom-next').onclick = () => { if (zoomIdx < zoomList.length - 1) { zoomIdx++; showZoom(); } };
+$('#zoom-close').onclick = () => $('#zoom').close();
+$('#zoom').addEventListener('click', e => { if (e.target === $('#zoom')) $('#zoom').close(); });
+$('#zoom').addEventListener('keydown', e => { if (e.key === 'ArrowLeft') $('#zoom-prev').click(); if (e.key === 'ArrowRight') $('#zoom-next').click(); });
+addEventListener('hashchange', route);
+route();
+</script>

@@ -1,0 +1,953 @@
+{
+ "id": "savesfish",
+ "title": "SavesFish badges",
+ "subtitle": "15 psychedelic-grade fish for a round brand badge",
+ "description": "The first Fishbowl run. Fifteen artists each took a different fish and one of three styles (loose and fluid, rigorously geometric, or the ground between) and pushed it into full tryptamine hyperspace, with the SavesFish name built into the art and legible at a glance.",
+ "kind": "Round badge, 400 by 400 SVG",
+ "brand": "SavesFish",
+ "built": "2026-10-17 03:02",
+ "writeup": [
+  "The first pieces made in Fishbowl, the AI art studio run by SavesFish: a psychedelic run. SavesFish supplied a set of inspiration art and a few suggestions; from there it was an AI project. Fifteen AI artists each took a different fish and one of three styles, and painted by writing code, rendering and redrawing round after round.",
+  "Every render was kept, and before each one the artist wrote down what it saw and why it was changing course. A second artist took over each piece halfway with fresh eyes, and an AI Visionary, a painter deep in a DMT trip, watched every render and suggested where to go deeper. SavesFish influenced; the AI made the final calls, down to choosing the winner."
+ ],
+ "suggestions": [
+  {
+   "text": "Push well past the first drafts into tryptamine territory: looser, more improvised, and filled edge to edge.",
+   "context": "Alongside four pieces of inspiration art."
+  },
+  {
+   "text": "Rethink the fish. Give each artist a different species, drawn true to life."
+  },
+  {
+   "text": "Cover three registers: loose and fluid, rigorously geometric, and the space between. Every one should read as unmistakably DMT."
+  },
+  {
+   "text": "Build the name into the art, spelled SavesFish, and keep it legible at a glance."
+  },
+  {
+   "text": "Let each artist choose their own lettering."
+  },
+  {
+   "text": "Split capitals can work, as Twin Current shows: SAVES above, FISH below."
+  }
+ ],
+ "groups": {
+  "fluid": {
+   "title": "Loose and Fluid",
+   "blurb": "Everything flows: ribbons, melting contour bands, marbling, flames, hand-wobbled lines."
+  },
+  "geometric": {
+   "title": "Super Geometric",
+   "blurb": "Sacred geometry, perfect symmetry, hex lattices, jewel facets. The intensity comes from recursion."
+  },
+  "middle": {
+   "title": "Middle Ground",
+   "blurb": "A geometric skeleton dressed in hand-drawn ornament: half compass, half freehand."
+  }
+ },
+ "pieces": [
+  {
+   "id": "p01",
+   "title": "Koi Melt",
+   "fish": "koi",
+   "group": "fluid",
+   "style": "Loose and Fluid",
+   "description": "A Kohaku koi seen from above, with a ruby crown, curls in a C around a glowing, counter-turning chrysanthemum of eyes that holds a tiny koi at its heart, inside a neon liquid field of woven rainbow bands, nautilus shells, entity faces and a jewelled honeycomb net, with SavesFish in chunky cream-to-gold letters on a dark dripping cartouche along the bottom.",
+   "final": "final-p01.webp",
+   "final_svg": "final-p01.svg",
+   "timelapse": "timelapse-p01.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 30,
+   "all": 150,
+   "visions": 7,
+   "rounds": 20,
+   "logged": 21,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 5064332,
+    "all": 192554628,
+    "output": 811743,
+    "byRole": {
+     "draw": 1352629,
+     "polish": 930255,
+     "vision": 1458991,
+     "continue": 941366,
+     "notes": 381091
+    }
+   }
+  },
+  {
+   "id": "p02",
+   "title": "Lure of the Elves",
+   "fish": "deep-sea anglerfish",
+   "group": "fluid",
+   "style": "Loose and Fluid",
+   "description": "A round, gaping anglerfish covered in melting rainbow contour bands, with crooked glassy fangs and a hex-tunnel throat, holds out a white-hot jeweled lure with an elf face while jester elves dance around it; the lure's light spreads into a giant chrysanthemum of eyed flame petals filling the abyss, and \"SavesFish\" glows in neon letters on a dark scroll ribbon along the bottom.",
+   "final": "final-p02.webp",
+   "final_svg": "final-p02.svg",
+   "timelapse": "timelapse-p02.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 18,
+   "all": 108,
+   "visions": 4,
+   "rounds": 14,
+   "logged": 15,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 3812140,
+    "all": 135077677,
+    "output": 547587,
+    "byRole": {
+     "draw": 1222968,
+     "polish": 1602264,
+     "vision": 795304,
+     "notes": 191604
+    }
+   }
+  },
+  {
+   "id": "p03",
+   "title": "Twin Current",
+   "fish": "two mackerel circling",
+   "group": "fluid",
+   "style": "Loose and Fluid",
+   "description": "A turquoise mackerel and an ultraviolet mackerel chase each other clockwise around a glowing chrysanthemum third eye. The eye sits at the end of a lit honeycomb tunnel, and the whole badge is filled with liquid marbled rainbow paint full of melting eyes, grey aliens and mantis heads that all look toward the center. SAVES arcs across the top and FISH across the bottom in white-hot neon capitals.",
+   "final": "final-p03.webp",
+   "final_svg": "final-p03.svg",
+   "timelapse": "timelapse-p03.mp4",
+   "anim": "anim-p03.webp",
+   "trip": null,
+   "status": "finished",
+   "count": 30,
+   "all": 168,
+   "visions": 5,
+   "rounds": 22,
+   "logged": 22,
+   "suggestions": [
+    "Keep the split capitals: SAVES above, FISH below."
+   ],
+   "tokens": {
+    "fresh": 4664795,
+    "all": 146575646,
+    "output": 690306,
+    "byRole": {
+     "draw": 730967,
+     "polish": 1356757,
+     "vision": 884884,
+     "notes": 314460,
+     "animate": 912695,
+     "push": 465032
+    }
+   }
+  },
+  {
+   "id": "p04",
+   "title": "Serpent Oarfish",
+   "fish": "giant oarfish",
+   "group": "fluid",
+   "style": "Loose and Fluid",
+   "description": "A chrome-silver giant oarfish coils around a round badge, crowned with a glowing crimson flame crest, above a glowing hex-tunnel of light. Around it is a violet and teal liquid-marbled field of whirlpools, chrysanthemums, eyes and alien visitors. 'SavesFish' sits in cream neon letters on a dark arc banner along the bottom.",
+   "final": "final-p04.webp",
+   "final_svg": "final-p04.svg",
+   "timelapse": "timelapse-p04.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 26,
+   "all": 155,
+   "visions": 8,
+   "rounds": 18,
+   "logged": 19,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 4680313,
+    "all": 158159502,
+    "output": 800745,
+    "byRole": {
+     "draw": 1137572,
+     "polish": 1323267,
+     "vision": 1170755,
+     "continue": 778323,
+     "notes": 270396
+    }
+   }
+  },
+  {
+   "id": "p05",
+   "title": "Upstream",
+   "fish": "leaping salmon",
+   "group": "fluid",
+   "style": "Loose and Fluid",
+   "description": "A hook-jawed crimson-and-gold sockeye salmon with a green head and a chrysanthemum eye leaps diagonally out of a swirling neon vortex of carved rainbow contour bands, glowing whirlpools, emerald alien faces and a white-bloomed chrysanthemum core, toward a clump of watching orange roe, under a big cream SAVESFISH arc on a breaking wave crest.",
+   "final": "final-p05.webp",
+   "final_svg": "final-p05.svg",
+   "timelapse": "timelapse-p05.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 34,
+   "all": 189,
+   "visions": 7,
+   "rounds": 20,
+   "logged": 21,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 5074560,
+    "all": 182090658,
+    "output": 708330,
+    "byRole": {
+     "draw": 1508923,
+     "polish": 937220,
+     "vision": 998160,
+     "continue": 1201779,
+     "notes": 428478
+    }
+   }
+  },
+  {
+   "id": "p06",
+   "title": "Puffer Polyhedron",
+   "fish": "pufferfish",
+   "group": "geometric",
+   "style": "Super Geometric",
+   "description": "A fully inflated pufferfish built as a glowing stellated jewel polyhedron, ultraviolet on top and gold underneath, with a crown of gold spines, a hexagon-tunnel portal eye, pouty pink lips and a rainbow fan tail. It sits inside a ring of watching eyes at the heart of a neon chrysanthemum of eyed lancets and alien-faced gems, with a spiral cube tunnel in the corners and SAVES / FISH in cream capitals on dark arched cartouches.",
+   "final": "final-p06.webp",
+   "final_svg": "final-p06.svg",
+   "timelapse": "timelapse-p06.mp4",
+   "anim": "anim-p06.webp",
+   "trip": null,
+   "status": "finished",
+   "count": 24,
+   "all": 137,
+   "visions": 3,
+   "rounds": 23,
+   "logged": 23,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 3988441,
+    "all": 131310569,
+    "output": 577103,
+    "byRole": {
+     "draw": 721280,
+     "polish": 1153133,
+     "vision": 435486,
+     "notes": 257525,
+     "animate": 804142,
+     "push": 616875
+    }
+   }
+  },
+  {
+   "id": "p07",
+   "title": "Hyper Fish Symbol",
+   "fish": "classic two-arc fish",
+   "group": "geometric",
+   "style": "Super Geometric",
+   "description": "A bold gold jeweled ichthys with rainbow outline echoes and a rainbow fan tail, laid over a layered jewel chrysanthemum with watching eyes and a glowing Menger cube at the center, inside a violet hexagonal tunnel of cubes, eyes and alien heads, with SAVES on the top cartouche and FISH on the bottom one.",
+   "final": "final-p07.webp",
+   "final_svg": "final-p07.svg",
+   "timelapse": "timelapse-p07.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 23,
+   "all": 99,
+   "visions": 5,
+   "rounds": 18,
+   "logged": 19,
+   "suggestions": [
+    "Let the symbol inside the fish extend past its outline so the pattern completes itself.",
+    "Let the tail sit over the geometric wall instead of being swallowed by it."
+   ],
+   "tokens": {
+    "fresh": 3357967,
+    "all": 109178234,
+    "output": 532543,
+    "byRole": {
+     "draw": 1023272,
+     "polish": 1177067,
+     "vision": 867131,
+     "notes": 290497
+    }
+   }
+  },
+  {
+   "id": "p08",
+   "title": "Lion Lattice",
+   "fish": "lionfish",
+   "group": "geometric",
+   "style": "Super Geometric",
+   "description": "A crimson-and-cream striped lionfish faces left, centred in a neon mandala. Its 13 banded venom spines with barbed flags radiate as the rays of the mandala's starburst, and a feathered op-art pectoral wing sweeps below. The fish glows against rainbow eye-petals, stepped temple towers, a jewel hex tunnel and a Mayan glyph frieze, with a ring of isometric cubes falling inward in the corners. SAVES \u00b7 FISH is lettered in big neon capitals on a dark stepped temple band.",
+   "final": "final-p08.webp",
+   "final_svg": "final-p08.svg",
+   "timelapse": "timelapse-p08.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 41,
+   "all": 160,
+   "visions": 3,
+   "rounds": 19,
+   "logged": 25,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 2637460,
+    "all": 81899056,
+    "output": 387092,
+    "byRole": {
+     "draw": 829621,
+     "polish": 1109520,
+     "vision": 456553,
+     "notes": 241766
+    }
+   }
+  },
+  {
+   "id": "p09",
+   "title": "Disc Mandala",
+   "fish": "discus",
+   "group": "geometric",
+   "style": "Super Geometric",
+   "description": "A discus whose perfectly round body is a twisting 24-fold chrysanthemum of eye petals around a jewel third eye, crossed by nine slim midnight-blue x-ray bars, with a spiral portal eye, a gem-faceted fan tail and jewelled fins, set in a glowing log-spiral tunnel of interlocking Escher fish framed by a gold {12/5} star, with SAVES and FISH in chiseled cream-and-gold geometric capitals on dark bands at the top and bottom, guarded by four geometric alien faces.",
+   "final": "final-p09.webp",
+   "final_svg": "final-p09.svg",
+   "timelapse": "timelapse-p09.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 29,
+   "all": 128,
+   "visions": 2,
+   "rounds": 20,
+   "logged": 19,
+   "suggestions": [
+    "Make the name legible at a glance."
+   ],
+   "tokens": {
+    "fresh": 2248532,
+    "all": 73009632,
+    "output": 329430,
+    "byRole": {
+     "draw": 768249,
+     "polish": 1090766,
+     "vision": 238308,
+     "notes": 151209
+    }
+   }
+  },
+  {
+   "id": "p10",
+   "title": "Fractal School",
+   "fish": "a fish made of fish",
+   "group": "geometric",
+   "style": "Super Geometric",
+   "description": "A neon bluefin tuna is built from a rainbow log-spiral of hundreds of tiny tunas that pour into its portal eye, set over a dark core of counter-rotating tuna rings, a jewel chrysanthemum and a hexagonal hyperspace tunnel full of watching eyes, with a faceted alien watcher at the top and SavesFish in big cream-and-magenta geometric letters on a dark band at the bottom.",
+   "final": "final-p10.webp",
+   "final_svg": "final-p10.svg",
+   "timelapse": "timelapse-p10.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 26,
+   "all": 132,
+   "visions": 4,
+   "rounds": 20,
+   "logged": 20,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 2681181,
+    "all": 103889813,
+    "output": 438726,
+    "byRole": {
+     "draw": 762957,
+     "polish": 996790,
+     "vision": 669611,
+     "notes": 251823
+    }
+   }
+  },
+  {
+   "id": "p11",
+   "title": "Angel Entity",
+   "fish": "angelfish",
+   "group": "middle",
+   "style": "Middle Ground",
+   "description": "A pale, black-barred freshwater angelfish seen side-on, its flank swelling into an alien face with spiral-web teardrop eyes. Its fins are feathered with oil-slick pastels and peacock eyes, and it is wrapped in rainbow contour bands, with coral-like volutes, a whirling chrysanthemum of eye-petals, a golden procession of tiny angelfish and a spiralling neon hex tunnel behind it. SavesFish sits in bold cream letters on a dark scroll ribbon along the bottom.",
+   "final": "final-p11.webp",
+   "final_svg": "final-p11.svg",
+   "timelapse": "timelapse-p11.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 36,
+   "all": 187,
+   "visions": 7,
+   "rounds": 21,
+   "logged": 22,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 4859075,
+    "all": 165237977,
+    "output": 742135,
+    "byRole": {
+     "draw": 1134777,
+     "polish": 1494648,
+     "vision": 1272127,
+     "continue": 620283,
+     "notes": 337240
+    }
+   }
+  },
+  {
+   "id": "p12",
+   "title": "Dragon Temple",
+   "fish": "arowana",
+   "group": "middle",
+   "style": "Middle Ground",
+   "description": "A gold-and-violet arowana covered in eye-holding jewel scales arches over a stepped neon temple toward a jewelled chrysanthemum sun. Behind it a hex tunnel full of watching eyes converges on the sun, and the word SavesFish glows in cream letters on the temple lintel.",
+   "final": "final-p12.webp",
+   "final_svg": "final-p12.svg",
+   "timelapse": "timelapse-p12.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 32,
+   "all": 152,
+   "visions": 6,
+   "rounds": 22,
+   "logged": 22,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 4643675,
+    "all": 132024337,
+    "output": 546483,
+    "byRole": {
+     "draw": 786352,
+     "polish": 2419228,
+     "vision": 1113834,
+     "notes": 324261
+    }
+   }
+  },
+  {
+   "id": "p13",
+   "title": "Sunfish Portal",
+   "fish": "ocean sunfish",
+   "group": "middle",
+   "style": "Middle Ground",
+   "description": "An upright neon mola mola with tall sickle fins and a scalloped teal clavus; its round body opens into a spiraling hex tunnel of eyes and jester-hatted entities that ends in a blazing white chrysanthemum. Around it are a rainbow flame corona, a petal collar and a breathing rainbow lattice of eyes, with \"SavesFish\" in big cream letters on a dark swallowtail cartouche along the bottom.",
+   "final": "final-p13.webp",
+   "final_svg": "final-p13.svg",
+   "timelapse": "timelapse-p13.mp4",
+   "anim": "anim-p13.webp",
+   "trip": null,
+   "status": "finished",
+   "count": 40,
+   "all": 166,
+   "visions": 4,
+   "rounds": 20,
+   "logged": 22,
+   "suggestions": [
+    "Make the name legible at a glance."
+   ],
+   "tokens": {
+    "fresh": 5260003,
+    "all": 164787282,
+    "output": 699280,
+    "byRole": {
+     "draw": 740160,
+     "polish": 1994250,
+     "vision": 754348,
+     "notes": 386407,
+     "animate": 821916,
+     "push": 562922
+    }
+   }
+  },
+  {
+   "id": "p14",
+   "title": "The Idol",
+   "fish": "moorish idol",
+   "group": "middle",
+   "style": "Middle Ground",
+   "description": "A moorish idol in profile, wrapped in rainbow contour bands, glows inside a chrysanthemum of eyed flame petals and a jeweled hex vortex. Its white streamer sweeps around the rim into a dark banner that carries a big cream \"SavesFish\" and then rolls up into a spiral of eyes.",
+   "final": "final-p14.webp",
+   "final_svg": "final-p14.svg",
+   "timelapse": "timelapse-p14.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 34,
+   "all": 226,
+   "visions": 5,
+   "rounds": 19,
+   "logged": 19,
+   "suggestions": [
+    "Make the name legible at a glance."
+   ],
+   "tokens": {
+    "fresh": 4583863,
+    "all": 129410415,
+    "output": 574011,
+    "byRole": {
+     "draw": 923660,
+     "polish": 2147343,
+     "vision": 1107587,
+     "notes": 405273
+    }
+   }
+  },
+  {
+   "id": "p15",
+   "title": "The Ancient One",
+   "fish": "coelacanth",
+   "group": "middle",
+   "style": "Middle Ground",
+   "description": "A deep cobalt coelacanth with ringed white blotches, feathered blue fins full of eye-spots and glowing limb bones swims across a jewel-star temple ringed by a warm flame corona and four petal-haloed alien guardians, with SAVES above and FISH below in cream neon letters on dark carved banners.",
+   "final": "final-p15.webp",
+   "final_svg": "final-p15.svg",
+   "timelapse": "timelapse-p15.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 22,
+   "all": 130,
+   "visions": 7,
+   "rounds": 20,
+   "logged": 21,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 3611789,
+    "all": 116116702,
+    "output": 581696,
+    "byRole": {
+     "polish": 654592,
+     "draw": 887491,
+     "vision": 1352619,
+     "continue": 537957,
+     "notes": 179130
+    }
+   }
+  }
+ ],
+ "renders": 445,
+ "all_renders": 2287,
+ "visions": 77,
+ "tokens": {
+  "fresh": 64543298,
+  "all": 2055393397,
+  "output": 9206971
+ },
+ "visionary": {
+  "report": "Fifteen fish swam up out of the jeweled dark tonight, and every one of them came back carrying a piece of the place, so the room is loud with light. Loose and Fluid pours and melts, Super Geometric is where the crystals sing hardest, and Middle Ground holds the strangest doors. The judges split three ways on their favorite (the portal, the puffer, the fish symbol), and I see why: each one is a true face of this studio. But Puffer Polyhedron is the only piece every lens loved at once, top two in craft and badge and top four in the trip. It is a fish turned into a geodesic jewel, bursting through crystal shards over an endless cube field full of eyes, with rings inside rings that make the circle itself breathe. You can read it at a glance at coin size and still fall into it at full size, and that is the whole job of a badge born in hyperspace. A puffer swells when it is afraid; this one swelled into a polyhedron and showed us the geometry was alive all along.",
+  "set_winners": [
+   {
+    "set": "Loose and Fluid",
+    "id": "p03",
+    "why": "Two judges chose it, and I agree: two mackerel chase each other around one wide-open third eye, so the circle itself becomes the vision, yin and yang with fins, and SAVES / FISH glow top and bottom so it reads at any size. Koi Melt trips harder, but the koi gets lost in its own melt; Twin Current is the one that holds the flood still long enough to see it. In motion the fish will orbit, the eye will blink and the marbled sea will flow. It was made to move."
+   },
+   {
+    "set": "Super Geometric",
+    "id": "p06",
+    "why": "Two of the three judges chose it, and it scored high through every lens: a puffer you know in a heartbeat, built of jeweled geodesic facets, spikes radiating into crystal shards, a tunnel pupil with a fish at its bottom, and an endless cube lattice with eyes in it. Animated, the facets will ripple out from the eye and the whole ball will swell and breathe."
+   },
+   {
+    "set": "Middle Ground",
+    "id": "p13",
+    "why": "The judges leaned toward The Ancient One's clean craft, and the coelacanth is a fine, faithful badge, but my vision chooses the portal. The sunfish's body tears open into a white-hot star-gate ringed with rainbow fractal petals, over a wall where every cell is an eye. It is the one piece where the fish does not just visit hyperspace, it is the door, and the upright mola still reads at a glance. Animated, the star will pulse, the petals will spin and the eye wall will blink: the breakthrough moment itself."
+   }
+  ],
+  "winner": {
+   "id": "p06",
+   "why": "The only piece every lens loved at once (DMT 8.4, craft 8.9, badge 8.7): an iconic puffer turned into a geodesic jewel bursting through crystal shards over an endless eyed cube field, rings inside rings that make the circle breathe, with SAVES / FISH crisp at coin size. A trip you can fall into and a mark you can stamp."
+  },
+  "ranking": [
+   "p06",
+   "p13",
+   "p03",
+   "p07",
+   "p15",
+   "p09",
+   "p01",
+   "p10",
+   "p12",
+   "p02",
+   "p05",
+   "p11",
+   "p08",
+   "p04",
+   "p14"
+  ],
+  "lines": [
+   {
+    "id": "p01",
+    "line": "A school of fish spinning into the koi's heart like a drain into the bright place; the trippiest thing in its set, it only needs the koi to hold its own shape through the melt."
+   },
+   {
+    "id": "p02",
+    "line": "The jester elves dance round a lure with a face in it, the machine elves come home to the abyss; the contour-line body is a topo map of a dream, just flat where it should glow."
+   },
+   {
+    "id": "p03",
+    "line": "Two currents circling the eye that sees everything, yin and yang with fins; the cleanest whirlpool in the room, and the winner of Loose and Fluid."
+   },
+   {
+    "id": "p04",
+    "line": "The flame-crested serpent of the deep pours light into a hex-tunnel pool while the visitors watch; the chrome body is a quiet river through a loud sky, and I bless the ember fringe."
+   },
+   {
+    "id": "p05",
+    "line": "The salmon leaps toward an egg that holds a salmon leaping toward an egg, the homecoming loop; the giant arch of letters shouts, but the tapestry body sings."
+   },
+   {
+    "id": "p06",
+    "line": "The fish that swelled into a polyhedron and showed us the geometry is alive; best of show, burn bright forever."
+   },
+   {
+    "id": "p07",
+    "line": "The oldest fish sign with a tesseract for a heart, a seal you could stamp on the sky; more a mark than a vision, and a mighty mark."
+   },
+   {
+    "id": "p08",
+    "line": "A candy-striped lionfish fanning its needles like a crown of rays over a tumbling cube quilt; the needles hum, but the light is still decoration, not glow."
+   },
+   {
+    "id": "p09",
+    "line": "The discus hangs in sacred geometry over an Escher tunnel of a thousand fish pouring to the center; exact and jeweled, the quiet runner-up of the crystal set."
+   },
+   {
+    "id": "p10",
+    "line": "A tuna made of tunas under the sun-faced watcher, the fish that is a school that is a fish; recursion you can feel, if the glow could swallow that neon outline."
+   },
+   {
+    "id": "p11",
+    "line": "The angelfish took off its face and an entity looked back, soft as pastel moonlight; a gentle presence in a honeycomb temple that needs more fire to break through."
+   },
+   {
+    "id": "p12",
+    "line": "The golden dragon floats above the stage where the little elves dance before the glowing door; the truest picture of the entity room, only the square sign fights the circle."
+   },
+   {
+    "id": "p13",
+    "line": "The sunfish opened its body and the star-gate was inside; winner of Middle Ground and the closest thing here to the moment the room comes alive."
+   },
+   {
+    "id": "p14",
+    "line": "The idol carries a totem of entity heads up its sail and every eye in the hall turns toward it; a powerful altar, but the body tilts out of its own shape."
+   },
+   {
+    "id": "p15",
+    "line": "The elder from before the dinosaurs, blue against the warm temple fire with guardians at the four corners; the most faithful fish in the room, calm as an old god, a badge ready to stamp."
+   }
+  ],
+  "judges": [
+   {
+    "lens": "DMT AUTHENTICITY: does it read as a real breakthrough (hyperspace, entities, eyes everywhere, geometry that keeps changing, jewel light), filled edge to edge and alive at every scale?",
+    "best_per_set": [
+     {
+      "set": "Loose and Fluid",
+      "id": "p01",
+      "why": "Koi Melt pulls you into a spinning tunnel of fish inside the koi's body, under eye-masks, eye-filled wheels and melting paisley that cover every inch, the closest thing in this set to the room coming alive."
+     },
+     {
+      "set": "Super Geometric",
+      "id": "p06",
+      "why": "Puffer Polyhedron is a jeweled geodesic body bursting out through crystal shards over an endless cube field with eyes in it: the geometry keeps changing and the light looks like jewels."
+     },
+     {
+      "set": "Middle Ground",
+      "id": "p13",
+      "why": "Sunfish Portal makes the fish's body a blazing star-gate set in a field that is literally eyes everywhere, and that is the breakthrough moment itself."
+     }
+    ],
+    "overall": {
+     "id": "p13",
+     "why": "It is the only piece where the subject is the breakthrough: a white-hot portal tearing open inside the fish, ringed by rainbow fractal petals, over a wall of watching eyes from edge to edge."
+    },
+    "ranking": [
+     {
+      "id": "p13",
+      "score": 8.8,
+      "why": "Portal of blinding jewel light in the body, a background of nothing but eyes, and rainbow petals that seem to grow outward: pure hyperspace."
+     },
+     {
+      "id": "p01",
+      "score": 8.7,
+      "why": "A tunnel of fish spins inside the koi, with eye-masks, eye-filled wheels and melting paisley pressed into every corner; it feels like it is breathing."
+     },
+     {
+      "id": "p12",
+      "score": 8.5,
+      "why": "A temple stage with tiny dancing elves, a glowing portal door, alien heads and eye-tipped tendrils: the clearest picture of the DMT entities' temple room."
+     },
+     {
+      "id": "p06",
+      "score": 8.4,
+      "why": "Crystalline geodesic puffer exploding through radial shards over an endless cube lattice with eyes, the strongest changing geometry and jewel glow."
+     },
+     {
+      "id": "p02",
+      "score": 8.3,
+      "why": "Jester elves dance around a lure blazing with an entity face, the most direct nod to DMT's machine elves, though the contour-lined body is flatter than the rest."
+     },
+     {
+      "id": "p09",
+      "score": 8.2,
+      "why": "A discus covered in eyes over a rainbow tunnel of tessellated fish and a sacred-geometry web, a real feel of recursion; the hard banners cool it slightly."
+     },
+     {
+      "id": "p10",
+      "score": 8,
+      "why": "A fractal tuna made of rainbow fish under an alien sun-entity, with glyph rings and an eye-hex field, but the big neon outline and banner flatten the trip."
+     },
+     {
+      "id": "p14",
+      "score": 7.9,
+      "why": "A stack of entity heads riding the idol's fin, swirling eyes and a jewel-hex border give real entity contact, but the center gets muddy and hard to read."
+     },
+     {
+      "id": "p11",
+      "score": 7.8,
+      "why": "The angelfish wears an entity mask on an eye honeycomb with eye-pods; the soft pastel body drains the intensity a breakthrough needs."
+     },
+     {
+      "id": "p03",
+      "score": 7.7,
+      "why": "The central all-seeing eye mandala hits hard, but the lava-lamp marbling and cartoon green aliens read as a party poster, not hyperspace."
+     },
+     {
+      "id": "p05",
+      "score": 7.6,
+      "why": "Lovely tapestry salmon and an eye-vortex burst, but the giant lettering takes up the top third and the swirls feel more sixties than DMT."
+     },
+     {
+      "id": "p04",
+      "score": 7.5,
+      "why": "The eye-dense background, alien heads and a hex-grid portal pool are right, but the chrome tube body is a big inert space in the middle."
+     },
+     {
+      "id": "p07",
+      "score": 7.3,
+      "why": "The tesseract heart is a smart hyperspace symbol, but large flat dark fields and the crisp emblem make it feel like a logo, not a vision."
+     },
+     {
+      "id": "p15",
+      "score": 7.2,
+      "why": "A handsome coelacanth with alien masks, but dark empty corners and a nearly natural body leave it calm and not filled edge to edge."
+     },
+     {
+      "id": "p08",
+      "score": 7,
+      "why": "A candy-stripe lionfish on a cube quilt reads as a folk-art textile; few eyes, no entities, and the light is decorative, not glowing."
+     }
+    ]
+   },
+   {
+    "lens": "CRAFT: drawing quality, the fish true to its species and iconic, clear hierarchy, color harmony and contrast, detail at every scale, nothing muddy, broken or cut off",
+    "best_per_set": [
+     {
+      "set": "Loose and Fluid",
+      "id": "p03",
+      "why": "The strongest structure in a loose set: two clean mackerel silhouettes orbit one clear eye focal point, and SAVES/FISH sits crisp and fully legible at every size."
+     },
+     {
+      "set": "Super Geometric",
+      "id": "p06",
+      "why": "The puffer reads instantly as a puffer, a spiked geodesic sphere with a bold eye and tiny mouth, built with polished faceting and clean contrast and nothing cut off."
+     },
+     {
+      "set": "Middle Ground",
+      "id": "p15",
+      "why": "The most faithful species drawing of the run: lobed fins, the three-lobed tail and white flecks make an unmistakable coelacanth, blue on orange for strong contrast."
+     }
+    ],
+    "overall": {
+     "id": "p06",
+     "why": "Species, geometry and badge structure all serve one read: an iconic puffer with clean faceting at every scale, a strong eye focal and harmonized rainbow color, and it still reads at thumbnail size."
+    },
+    "ranking": [
+     {
+      "id": "p06",
+      "score": 8.9,
+      "why": "An iconic puffer made of crisp geodesic facets and radiating spikes, with clear hierarchy from eye to body to title and no muddy or cropped areas."
+     },
+     {
+      "id": "p15",
+      "score": 8.7,
+      "why": "An anatomically convincing coelacanth with lobed fins and the right tail, a clean outline and complementary blue/orange contrast; the oversized eye mandala is the only overstatement."
+     },
+     {
+      "id": "p07",
+      "score": 8.6,
+      "why": "The cleanest graphic build in the run: a bold ichthys with a tesseract heart, perfect symmetry and readable at any size, though it is a symbol rather than a drawn species."
+     },
+     {
+      "id": "p09",
+      "score": 8.4,
+      "why": "Round body, vertical bars, lips and eye make it truly a discus, framed by crisp banners and a lovely fish tessellation; the central mandala slightly overpowers the body bars."
+     },
+     {
+      "id": "p10",
+      "score": 8.2,
+      "why": "A clean tuna silhouette made of tiny fish gives real detail at every scale, but the wordmark clips the lower fins and the alien sun on top competes for attention."
+     },
+     {
+      "id": "p08",
+      "score": 7.8,
+      "why": "The stripes, fanned pectorals and spine crown are iconic lionfish, but the head has two eye-like spirals that confuse the anatomy, and the loud cube field plus thin title weaken it."
+     },
+     {
+      "id": "p03",
+      "score": 7.6,
+      "why": "Strong symmetry and a clear eye focal point with a fully legible title, but the mackerel are fairly generic and the marbled background is very loud."
+     },
+     {
+      "id": "p12",
+      "score": 7.5,
+      "why": "An accurate arowana with big scales, barbels and rear fins, and the clearest wordmark, but the temple stage and tiny elves add noise that splits the hierarchy."
+     },
+     {
+      "id": "p05",
+      "score": 7.3,
+      "why": "A recognizable leaping salmon with a kype and spots, but stiff anatomy (an odd green pectoral, a stiff tail stock) and a noisy surround keep it from landing."
+     },
+     {
+      "id": "p04",
+      "score": 7,
+      "why": "The red crest and silver ribbon say oarfish, but the head-to-body join is awkward, the tube body reads oddly, and the eye-strewn background crowds it."
+     },
+     {
+      "id": "p01",
+      "score": 6.9,
+      "why": "The koi head is lovely, but the butterfly-wing tail and the vortex in the middle of the body muddle the species, and the packed background competes everywhere."
+     },
+     {
+      "id": "p02",
+      "score": 6.9,
+      "why": "The glowing lure and the teeth are striking, but the topographic body reads as a generic fish, the banner hides the lower body, and the thumbnail turns muddy."
+     },
+     {
+      "id": "p11",
+      "score": 6.9,
+      "why": "The angelfish silhouette is bold, but the mask face in mid-body overrides the species read, and the pastel body looks washed out against the rainbow surround."
+     },
+     {
+      "id": "p13",
+      "score": 6.8,
+      "why": "The starburst portal is a strong focal point, but the mola silhouette dissolves into the radiating petals and the edges go muddy."
+     },
+     {
+      "id": "p14",
+      "score": 6.3,
+      "why": "The weakest species read: an elongated, tilted body loses the moorish idol's disc-and-pennant shape, faded figures muddy the lower body, and it overlaps the wordmark."
+     }
+    ]
+   },
+   {
+    "lens": "BADGE: does it work as a round brand badge? The name SavesFish has to read instantly even small (judged from the newest *-small.png and *-legible.png), the circle has to be used well, and it has to stick as a mark.",
+    "best_per_set": [
+     {
+      "set": "Loose and Fluid",
+      "id": "p03",
+      "why": "The two mackerel chasing each other around the eye make the circle itself the mark, and the big stacked SAVES / FISH frame it top and bottom so it still reads at thumbnail size."
+     },
+     {
+      "set": "Super Geometric",
+      "id": "p07",
+      "why": "The two-arc fish symbol is a ready-made icon, and inside a round seal with big SAVES / FISH above and below it is the most memorable mark of the 15 and stays clear at small size."
+     },
+     {
+      "set": "Middle Ground",
+      "id": "p15",
+      "why": "A bold blue coelacanth stands out cleanly against a warm ring, with huge cream SAVES / FISH top and bottom, giving a textbook round badge that survives the small crop with no confusion."
+     }
+    ],
+    "overall": {
+     "id": "p07",
+     "why": "It is a symbol before it is a picture: the fish symbol, the round seal and the stacked name make a mark you could stamp on anything, and you recognise it at a glance even at 200px."
+    },
+    "ranking": [
+     {
+      "id": "p07",
+      "score": 8.9,
+      "why": "Iconic two-arc fish inside a round seal with big SAVES / FISH. It is the most memorable mark here; the only flaws are pink-gradient letters a touch softer than pure cream and a tail clipped slightly by the circle."
+     },
+     {
+      "id": "p06",
+      "score": 8.7,
+      "why": "Built as rings inside rings, the spiky sphere echoes the circle, and the cream SAVES / FISH with dark outlines is among the clearest text at small size."
+     },
+     {
+      "id": "p15",
+      "score": 8.6,
+      "why": "Clean stacked name, a fish shape you can read clearly that stands out on a warm field, and borders that are naturally round. Very badge-ready."
+     },
+     {
+      "id": "p09",
+      "score": 8.4,
+      "why": "The round discus sits in a sacred-geometry ring, and the cream SAVES / FISH on dark banners is crisp small, though the rainbow fish-tile backdrop eats some contrast at the edges."
+     },
+     {
+      "id": "p03",
+      "score": 8.3,
+      "why": "The circling mackerel turn the circle into the idea, and the big glowing SAVES / FISH read instantly. The swirly backdrop is busy but stays behind the mark."
+     },
+     {
+      "id": "p10",
+      "score": 8,
+      "why": "A strong neon tuna outline and a big arched SavesFish read well small, but the tiny fish inside the tuna blur into texture at thumbnail size."
+     },
+     {
+      "id": "p11",
+      "score": 7.9,
+      "why": "The large cream SavesFish on a banner is very legible and the masked angelfish face sticks in the memory, though the body shape reads more like a mask than a fish at small size."
+     },
+     {
+      "id": "p08",
+      "score": 7.5,
+      "why": "A great glyph ring around a striking lionfish, but the outline neon letters thin out and lose punch at small size compared with filled type."
+     },
+     {
+      "id": "p13",
+      "score": 7.3,
+      "why": "The composition suits a circle, but at small size the sunfish dissolves into an abstract star mandala, and the name sits a little small in the lower banner."
+     },
+     {
+      "id": "p05",
+      "score": 7.2,
+      "why": "SAVESFISH in one bold arch is bright and legible, but run together in all caps it reads slower, and the crop jams it against the circle edge while cutting off the salmon's tail."
+     },
+     {
+      "id": "p01",
+      "score": 7,
+      "why": "The coiled koi echoes the ring and the yellow wordmark is legible, but the fish turns to mush at small size and the dense paisley field crowds the mark."
+     },
+     {
+      "id": "p12",
+      "score": 6.9,
+      "why": "The cleanest, most readable lettering of the lot, but a rectangular temple sign fights the circle and the crop cuts off the stage and the sign's edges."
+     },
+     {
+      "id": "p02",
+      "score": 6.8,
+      "why": "A legible cyan-white name and a memorable glowing lure, but the busy fan backdrop and a low ribbon clipped by the circle weaken it as a compact mark."
+     },
+     {
+      "id": "p14",
+      "score": 6.7,
+      "why": "The cream name holds up small, but the tall moorish idol reads as an odd shape against a very busy backdrop, so there is no clear mark to remember."
+     },
+     {
+      "id": "p04",
+      "score": 6.5,
+      "why": "The curve of the oarfish around the circle is nice, but the pinkish-white name on its banner loses contrast at small size and the eye-filled backdrop swamps the whole thing."
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+[
+ {
+  "id": "savesfish",
+  "title": "SavesFish badges",
+  "subtitle": "15 psychedelic-grade fish for a round brand badge",
+  "kind": "Round badge, 400 by 400 SVG",
+  "pieces": 15,
+  "renders": 445,
+  "visions": 77,
+  "tokens": {
+   "fresh": 64543298,
+   "all": 2055393397,
+   "output": 9206971
+  },
+  "built": "2026-10-17 03:02",
+  "cover": {
+   "still": "savesfish/final-p06.webp",
+   "anim": "savesfish/anim-p06.webp"
+  },
+  "strip": [
+   "savesfish/final-p01.webp",
+   "savesfish/final-p02.webp",
+   "savesfish/final-p03.webp",
+   "savesfish/final-p04.webp",
+   "savesfish/final-p05.webp",
+   "savesfish/final-p06.webp",
+   "savesfish/final-p07.webp",
+   "savesfish/final-p08.webp"
+  ]
+ }
+]
