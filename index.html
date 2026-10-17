@@ -47,7 +47,7 @@ p { margin: 0; }
 /* shared */
 section.block { padding-block: 40px; border-top: 1px solid var(--line); }
 section.block:first-of-type { border-top: 0; }
-h2.sec { font: 400 clamp(28px, 4.6vw, 42px)/1.1 var(--font-display); margin-bottom: 18px; }
+h2.sec { font: 400 clamp(28px, 4.6vw, 42px)/1.1 var(--font-display); margin-bottom: 28px; text-align: center; }
 .lede { max-width: 64ch; font-size: clamp(17px, 2vw, 19px); }
 .stats { display: flex; flex-wrap: wrap; gap: 10px 28px; font: 400 13px/1.3 var(--font-mono); color: var(--muted); }
 .stats b { display: block; font: 700 24px/1.15 var(--font-mono); color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -60,10 +60,12 @@ h2.sec { font: 400 clamp(28px, 4.6vw, 42px)/1.1 var(--font-display); margin-bott
 .loading { color: var(--muted); font: 13px var(--font-mono); padding: 40px 0; }
 
 /* home */
-.hero { padding-block: 54px 30px; display: grid; gap: 20px; }
+.hero { padding-block: 54px 30px; display: grid; gap: 20px; justify-items: center; text-align: center; }
+.hero .stats, .topic-hero .stats { justify-content: center; }
 .hero h1 { font: 400 clamp(64px, 13vw, 150px)/.95 var(--font-display); color: var(--gold);
   text-shadow: 4px 4px 0 var(--magenta), 8px 8px 0 #8B5CF6, 12px 12px 0 var(--cyan); }
-.topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 26px; }
+.topics { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; }
+.topics > * { width: min(100%, 400px); }
 .topic { display: grid; gap: 14px; text-decoration: none; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
 .topic:hover { border-color: var(--gold); }
 .topic .cover { aspect-ratio: 1; border-radius: 12px; }
@@ -72,18 +74,23 @@ h2.sec { font: 400 clamp(28px, 4.6vw, 42px)/1.1 var(--font-display); margin-bott
 .topic h3 { font: 400 28px/1.1 var(--font-display); }
 .topic p { color: var(--muted); font-size: 15px; }
 .topic.soon { border-style: dashed; color: var(--muted); align-content: center; min-height: 200px; text-align: center; }
-.cast { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; margin-bottom: 34px; }
+/* the cast sits 3 + 2, the bottom two centered */
+.cast { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px 28px; margin-bottom: 72px; }
+.cast > div { width: calc((100% - 56px) / 3); }
+@media (max-width: 900px) { .cast > div { width: calc((100% - 28px) / 2); } }
+@media (max-width: 560px) { .cast > div { width: 100%; } }
 .cast div { border-top: 3px solid var(--c, var(--gold)); padding-top: 12px; }
 .cast h3 { font: 700 18px/1.3 var(--font-body); margin-bottom: 6px; }
 .cast p { color: var(--muted); font-size: 15px; }
-ol.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: step; max-width: 820px; }
+ol.flow { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 18px; counter-reset: step; max-width: 820px; }
 ol.flow li { counter-increment: step; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; }
 ol.flow li::before { content: counter(step); font: 400 30px/1 var(--font-display); color: var(--magenta); }
 ol.flow h3 { font: 700 18px/1.3 var(--font-body); margin-bottom: 4px; }
 ol.flow p { color: var(--muted); max-width: 64ch; }
 
 /* topic */
-.topic-hero { padding-block: 26px 30px; display: grid; gap: 18px; }
+.topic-hero { padding-block: 26px 30px; display: grid; gap: 18px; justify-items: center; text-align: center; }
+.topic-hero .writeup { text-align: left; }
 .topic-hero h1 { font: 400 clamp(42px, 8vw, 84px)/1 var(--font-display); color: var(--gold); text-shadow: 3px 3px 0 var(--magenta), 6px 6px 0 #8B5CF6; }
 .direction { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; max-width: 820px; counter-reset: d; }
 .direction li { counter-increment: d; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
@@ -92,15 +99,24 @@ ol.flow p { color: var(--muted); max-width: 64ch; }
 .direction small { display: block; color: var(--muted); font-size: 13.5px; margin-top: 2px; }
 .writeup { display: grid; gap: 14px; max-width: 70ch; }
 .writeup p { font-size: clamp(16px, 1.9vw, 18px); }
-.final { display: grid; gap: 22px; }
-.final .podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
-@media (max-width: 760px) { .final .podium { grid-template-columns: minmax(0, 1fr); } }
-.final .podium a { display: grid; gap: 10px; text-decoration: none; color: var(--ink); }
-.final .podium .media { width: 100%; aspect-ratio: 1; }
-.final .podium h3 { font: 400 24px/1.1 var(--font-display); }
-.final .podium .place { font: 700 12px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--violet); }
-.final .podium .first .place { color: var(--gold); }
-.final .podium p { font-size: 14.5px; }
+.final { display: grid; gap: 40px; }
+.final > .lede { justify-self: center; }
+.final .eyebrow { text-align: center; margin-bottom: 16px; }
+/* the winners: one card each, best of show alone on top, the set winners side by side below */
+.winners { display: grid; gap: 36px; }
+.wrow { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px; }
+.wcard { width: min(100%, 540px); display: grid; gap: 16px; align-content: start; background: var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 36px; text-decoration: none; color: var(--ink); }
+.wcard.first { width: min(100%, 660px); border-color: var(--gold); }
+.wcard:hover { border-color: var(--gold); }
+.wcard .media { width: 100%; aspect-ratio: 1; margin-bottom: 12px; }
+.wcard h3 { font: 400 clamp(32px, 4.4vw, 46px)/1.05 var(--font-display); color: var(--gold); text-shadow: 3px 3px 0 var(--magenta); }
+.wcard .meta { font: 14px/1.5 var(--font-mono); color: var(--muted); }
+.wcard .award { justify-self: start; font: 700 13px/1.2 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; background: var(--gold); color: var(--ground); padding: 11px 20px; border-radius: 999px; }
+.wcard .award.set { background: var(--violet); }
+.wcard .desc { font: 15px/1.75 var(--font-mono); }
+.wcard .why { font-size: 16px; font-style: italic; color: var(--muted); border-left: 2px solid var(--violet); padding-left: 14px; }
+.wcard .why b { display: block; font: 700 11px/1.4 var(--font-mono); font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: var(--violet); margin-bottom: 4px; }
+@media (max-width: 560px) { .wcard { padding: 22px; border-radius: 20px; } }
 .judges { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; }
 .judges div { border-top: 2px solid var(--line); padding-top: 10px; font-size: 14px; }
 .judges b { display: block; font: 700 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
@@ -110,7 +126,7 @@ ol.flow p { color: var(--muted); max-width: 64ch; }
 .visionary .report { font-size: 18px; line-height: 1.6; font-style: italic; max-width: 70ch; }
 .visionary .faves { display: flex; flex-wrap: wrap; gap: 10px; }
 .visionary .faves a { color: var(--ink); text-decoration: none; border: 1px solid var(--violet); border-radius: 999px; padding: 8px 14px; font: 700 13px var(--font-mono); }
-.band-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-bottom: 20px; }
+.band-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; margin-bottom: 28px; }
 .band-head h2 { font: 400 clamp(28px, 4.8vw, 44px)/1.1 var(--font-display); }
 .band-head p { color: var(--muted); max-width: 60ch; }
 .band-0 .band-head h2 { color: var(--cyan); } .band-1 .band-head h2 { color: var(--gold); } .band-2 .band-head h2 { color: var(--magenta); } .band-3 .band-head h2 { color: var(--violet); }
@@ -122,7 +138,8 @@ ol.flow p { color: var(--muted); max-width: 64ch; }
 .pcard .media { width: 100%; aspect-ratio: 1; }
 .pcard h3 { font: 400 24px/1.1 var(--font-display); margin-top: 6px; }
 .pcard .meta { font: 12px/1.5 var(--font-mono); color: var(--muted); }
-.pcard p { font-size: 14.5px; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.pcard .chip { justify-self: start; }
+.pcard p { font-size: 14.5px; color: var(--ink); }
 .pcard:hover h3 { color: var(--gold); }
 
 /* piece */
@@ -183,11 +200,13 @@ ol.flow p { color: var(--muted); max-width: 64ch; }
 .rounds .vblock { margin-left: 0; max-width: none; }
 .closeups summary { cursor: pointer; font: 700 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
 .closeups .thumbs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); margin-top: 8px; }
-.tl-video { width: min(100%, 560px); aspect-ratio: 1; border-radius: 16px; background: var(--panel); display: block; }
+.tl { display: grid; justify-items: center; gap: 12px; }
+.tl .sec { margin-bottom: 0; }
+.tl-video { width: min(100%, 800px, 80vh); aspect-ratio: 1; border-radius: 16px; background: var(--panel); display: block; }
 .zoomable { cursor: zoom-in; }
-.tokens-note { max-width: 70ch; display: grid; gap: 10px; color: var(--ink); }
+.tokens-note { max-width: 70ch; margin: 0 auto; display: grid; gap: 10px; color: var(--ink); }
 .tokens-note p { font-size: 16px; }
-.tokens-note .eq { font: 13px/1.6 var(--font-mono); color: var(--muted); background: var(--panel); border-radius: 12px; padding: 14px 16px; }
+.tokens-note .eq { white-space: pre-line; font: 13px/1.6 var(--font-mono); color: var(--muted); background: var(--panel); border-radius: 12px; padding: 14px 16px; }
 .why-link { font: 12px var(--font-mono); }
 dialog.zoom { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); max-height: 96vh; }
 dialog.zoom::backdrop { background: rgba(7, 3, 26, .92); }
@@ -197,7 +216,7 @@ dialog.zoom .zbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: cente
 dialog.zoom button { font: 700 13px var(--font-mono); background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; min-height: 44px; cursor: pointer; }
 dialog.zoom button:disabled { opacity: .4; cursor: default; }
 footer { padding-block: 40px 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; margin-top: 30px; }
-footer p { max-width: 72ch; }
+footer p { max-width: 72ch; margin: 0 auto; text-align: center; }
 @media (prefers-reduced-motion: no-preference) { .pcard .media img { transition: transform .2s ease; } .pcard:hover .media img { transform: scale(1.03); } }
 </style>
 
@@ -292,11 +311,19 @@ function topic(m) {
     const byId = id => m.pieces.find(x => x.id === id);
     const sets = (v0.set_winners || []).slice();
     sets.sort((x, y) => (y.id === v0.winner.id) - (x.id === v0.winner.id));
-    const podium = el('div', { class: 'podium' }, ...sets.map((f, i) => { const p = byId(f.id); if (!p) return null; const best = p.id === v0.winner.id;
-      return el('a', { class: best ? 'first' : '', href: `#${m.id}.${p.id}` },
-        el('span', { class: 'place', text: (best ? 'Best of show · ' : '') + 'Best in ' + f.set }),
+    const rankOf = id => (v0.ranking || []).indexOf(id) + 1;
+    const card = f => { const p = byId(f.id); if (!p) return null; const best = p.id === v0.winner.id; const k = rankOf(p.id);
+      return el('a', { class: 'wcard' + (best ? ' first' : ''), href: `#${m.id}.${p.id}` },
         media(`data/${m.id}/${p.final}`, p.anim ? `data/${m.id}/${p.anim}` : null, shape, p.title, { autoplay: true }),
-        el('h3', { text: p.title }), el('p', { text: best ? v0.winner.why : f.why })); }));
+        el('h3', { text: p.title }),
+        el('div', { class: 'meta num', text: [p.style, p.fish, k ? `ranked ${k} of ${m.pieces.length}` : null].filter(Boolean).join(' · ') }),
+        el('span', { class: 'award' + (best ? '' : ' set'), text: (best ? 'Best of show · ' : '') + 'Best in ' + f.set }),
+        p.description ? el('p', { class: 'desc', text: p.description }) : null,
+        el('p', { class: 'why' }, el('b', { text: 'Why it won' }), best ? v0.winner.why : f.why)); };
+    const sw = v0.set_winners || [];
+    const top = sw.find(f => f.id === v0.winner.id) || { id: v0.winner.id, set: byId(v0.winner.id)?.style || '' };
+    const podium = el('div', { class: 'winners' }, el('div', { class: 'wrow' }, card(top)),
+      el('div', { class: 'wrow' }, ...sw.filter(f => f.id !== v0.winner.id).map(card)));
     const judges = el('div', { class: 'judges' }, ...(v0.judges || []).map(j => el('div', {}, el('b', { text: j.lens }),
       el('ol', {}, ...(j.best_per_set || []).map(r => el('li', { text: `${r.set}: ${byId(r.id)?.title || r.id}` })),
         j.overall ? el('li', { text: `Overall: ${byId(j.overall.id)?.title || j.overall.id}` }) : null))));
@@ -310,8 +337,9 @@ function topic(m) {
     const sec = el('section', { class: 'block band-' + (info.i % 4), id: g }, el('div', { class: 'band-head' }, el('h2', { text: info.title }), el('p', { text: info.blurb })));
     sec.append(el('div', { class: 'pieces' }, ...list.map(p => el('a', { class: 'pcard', href: `#${m.id}.${p.id}` },
       p.final ? media(`data/${m.id}/${p.final}`, p.anim ? `data/${m.id}/${p.anim}` : null, shape, `${p.title}`, { hover: true }) : el('div', { class: 'media ' + shape }),
-      el('h3', { text: p.title }), (m.visionary?.set_winners || []).some(f => f.id === p.id) ? el('span', { class: 'chip ' + (m.visionary.winner?.id === p.id ? 'done' : 'fav'), text: m.visionary.winner?.id === p.id ? 'Best of show' : 'Best in set' }) : null, el('div', { class: 'meta num', text: `${p.fish} · ${plural(p.count, 'render')} · ${fmt(p.tokens.fresh)} tokens` }),
-      p.description ? el('p', { text: p.description }) : null))));
+      el('h3', { text: p.title }), el('div', { class: 'meta num', text: `${p.fish} · ${plural(p.count, 'render')} · ${fmt(p.tokens.fresh)} tokens` }),
+      (m.visionary?.set_winners || []).some(f => f.id === p.id) ? el('span', { class: 'chip ' + (m.visionary.winner?.id === p.id ? 'done' : 'fav'), text: m.visionary.winner?.id === p.id ? 'Best of show' : 'Best in set' }) : null,
+      (p.short || p.description) ? el('p', { text: p.short || p.description }) : null))));
     v.append(sec);
   }
 }
@@ -353,9 +381,13 @@ async function piece(m, p) {
   const heroMedia = still ? media(still, p.anim ? `data/${m.id}/${p.anim}` : null, shape + ' zoomable', `${p.title}${p.anim ? ', animated' : ''}`, { autoplay: true, eager: true }) : el('div', { class: 'media ' + shape });
   if (still) heroMedia.addEventListener('click', () => openZoom([{ src: still, label: 'the finished piece' }], 0, p.title));
   v.append(el('section', { class: 'piece-hero' }, heroMedia, info));
-  if (p.timelapse) v.append(el('section', { class: 'block' }, el('h2', { class: 'sec', text: 'Timelapse' }),
-    el('p', { class: 'eyebrow', text: `every render, first to last` }),
-    el('video', { class: 'tl-video', src: `data/${m.id}/${p.timelapse}`, controls: '', muted: '', loop: '', playsinline: '', preload: 'metadata', poster: p.final ? `data/${m.id}/${p.final}` : null })));
+  if (p.timelapse) {
+    // plays by itself when the page opens (muted, which browsers require for autoplay), unless the visitor asked for less motion
+    const vid = el('video', { class: 'tl-video', src: `data/${m.id}/${p.timelapse}`, controls: '', loop: '', playsinline: '', preload: reduced ? 'metadata' : 'auto', poster: p.final ? `data/${m.id}/${p.final}` : null });
+    vid.muted = vid.defaultMuted = true;
+    if (!reduced) { vid.autoplay = true; vid.play().catch(() => {}); }
+    v.append(el('section', { class: 'block tl' }, el('h2', { class: 'sec', text: 'Timelapse' }), el('p', { class: 'eyebrow', text: `every render, first to last` }), vid));
+  }
   const sec = el('section', { class: 'block' }, el('h2', { class: 'sec', text: 'The whole process' }), el('p', { class: 'loading', text: `Loading ${plural(p.count, 'render')}…` }));
   v.append(sec);
   let d;
