@@ -1,0 +1,318 @@
+{
+ "id": "landscape",
+ "title": "Happy Little Landscapes",
+ "subtitle": "A mountain, a river and a lake, painted the Bob Ross way",
+ "description": "The second Fishbowl run. Three AI artists each took one Bob Ross subject (a snow-capped mountain at morning, a forest river spilling over rocks, a lake at sunset) and painted it the way he did on The Joy of Painting: a wet-on-wet sky, palette-knife mountains, fan-brush evergreens and still, pulled-down reflections, all written as code, round by round.",
+ "kind": "Square landscape painting, 400 by 400 SVG",
+ "brand": "Fishbowl",
+ "built": "2026-10-17 20:33",
+ "writeup": [
+  "A small Fishbowl run made just for the site: three landscapes in the style of Bob Ross. SavesFish chose the painter and the three subjects, a mountain, a river and a lake; from there it was an AI project. Each AI artist painted by writing code, rendering and redrawing round after round, one quick sketch artist and then a finishing artist on every piece.",
+  "Every render was kept, with a note on what the artist saw and why it changed course. A Plein-Air Master, a landscape painter with fifty years outdoors, watched each render and suggested where the light and air could be truer. SavesFish influenced; the AI made the final calls."
+ ],
+ "suggestions": [
+  {
+   "text": "Paint landscapes for the site, in the style of Bob Ross."
+  },
+  {
+   "text": "Match Bob Ross as closely as possible: his palette, his order of painting and his brush and knife marks."
+  },
+  {
+   "text": "Three subjects: a mountain, a river and a lake."
+  },
+  {
+   "text": "No text in the paintings."
+  }
+ ],
+ "groups": {
+  "snowcap-morning": {
+   "title": "Snowcap Morning",
+   "blurb": "A cold blue morning on the easel: a wet-on-wet Phthalo sky, one tall Prussian Blue peak with knife-cut white snow on its sunlit face, and misty ranges stepping back behind a few small dark evergreens."
+  },
+  "evergreen-stream": {
+   "title": "Evergreen Stream",
+   "blurb": "A mountain river rolls toward you through walls of dark fan-brush pines, its white ripple lines and foam the brightest things in a soft, hazy forest."
+  },
+  "golden-hour-glow": {
+   "title": "Golden Hour Glow",
+   "blurb": "A lake at sundown, its sky burning Indian Yellow into Alizarin Crimson, with every glow pulled straight down into still water and cut off by one thin bright line of shore."
+  }
+ },
+ "pieces": [
+  {
+   "id": "p01",
+   "title": "First Light Summit",
+   "fish": "Snowcap Peak",
+   "group": "snowcap-morning",
+   "style": "Snowcap Morning",
+   "description": "A Bob Ross style oil painting of a tall Prussian Blue peak with a gold-lit, knife-cut snowy right face and a soft blue-violet shadow side, set against a deep wet-on-wet blue sky with fluffy clouds, with a pale far peak, misty tree-dotted ranges and a snowy foot-hill of dark evergreens below.",
+   "short": "A gold-lit summit cut with glassy knife strokes rises over soft stepped mist and happy little trees.",
+   "final": "final-p01.webp",
+   "final_svg": "final-p01.svg",
+   "timelapse": "timelapse-p01.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 26,
+   "all": 75,
+   "visions": 10,
+   "rounds": 8,
+   "logged": 8,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 2267450,
+    "all": 23893850,
+    "output": 238204,
+    "byRole": {
+     "polish": 657250,
+     "sketch": 288909,
+     "draw": 484492,
+     "vision": 680798,
+     "notes": 156001
+    }
+   }
+  },
+  {
+   "id": "p02",
+   "title": "Whispering Falls",
+   "fish": "Forest River",
+   "group": "evergreen-stream",
+   "style": "Evergreen Stream",
+   "description": "A Bob Ross style forest river winds out of a misty glow between lavender far pines, falls in white streaks between dark knife-cut stones into churned foam, and spreads into a dark, rippled pool, framed by tall near-black evergreens and grassy banks.",
+   "short": "A foaming fall between dark knife-cut stones is the one bright spot in a closed evergreen forest.",
+   "final": "final-p02.webp",
+   "final_svg": "final-p02.svg",
+   "timelapse": "timelapse-p02.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 29,
+   "all": 88,
+   "visions": 9,
+   "rounds": 8,
+   "logged": 8,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 2310544,
+    "all": 32642697,
+    "output": 241486,
+    "byRole": {
+     "polish": 710469,
+     "sketch": 251620,
+     "draw": 614522,
+     "vision": 592914,
+     "notes": 141019
+    }
+   }
+  },
+  {
+   "id": "p03",
+   "title": "Amber Mirror",
+   "fish": "Sunset Lake",
+   "group": "golden-hour-glow",
+   "style": "Golden Hour Glow",
+   "description": "A Bob Ross style sunset over a glass-still autumn lake: a crimson-violet sky melts to gold around a small white sun half sunk behind a hazy far shore. A headland with a lit cabin and autumn trees stands on the left and one tall dark pine on the right, and a single golden column of reflected light runs down the water.",
+   "short": "A whole autumn lake that exists to hold one golden column of sunset light, pulled down still glass.",
+   "final": "final-p03.webp",
+   "final_svg": "final-p03.svg",
+   "timelapse": "timelapse-p03.mp4",
+   "anim": null,
+   "trip": null,
+   "status": "finished",
+   "count": 18,
+   "all": 80,
+   "visions": 7,
+   "rounds": 8,
+   "logged": 7,
+   "suggestions": [],
+   "tokens": {
+    "fresh": 1764678,
+    "all": 20655046,
+    "output": 171248,
+    "byRole": {
+     "sketch": 237055,
+     "draw": 415257,
+     "polish": 520315,
+     "vision": 459806,
+     "notes": 132245
+    }
+   }
+  }
+ ],
+ "renders": 73,
+ "all_renders": 243,
+ "visions": 26,
+ "tokens": {
+  "fresh": 7518400,
+  "all": 81775596,
+  "output": 699340
+ },
+ "visionary": {
+  "report": "Three easels, three kinds of light, and every one of them was painted the way a teacher would hope: sky first, background next, the dark things last, and the brightest marks saved for where the light actually lands. The snowy peak learned to keep its sparkle at the top where morning touches first, the falls learned that near water stays dark so far water can shine, and the lake learned that the hottest, crispest marks belong right where the sun meets the water. None of them is finished the way a fifty-year hand would finish them: the mountain's lower snow is still a little scratchy, the falls' rocks are still polished buns, and the lake's tall pine still stacks up like plates. But best of show goes to \"Amber Mirror\", and it isn't close. It is the only one where the light is the subject: a small white sun, a smooth bloom with no rings, a gold column pulled straight down and swiped across, and a glassy lake that holds the whole sky. The lit cabin window is the little reward for anyone who leans in, and the violet-to-crimson-to-gold key holds together from corner to corner, at full size and at a thumbnail. All three judges saw it the same way, and from my easel I agree.",
+  "set_winners": [
+   {
+    "set": "Snowcap Morning",
+    "id": "p01",
+    "why": "An iconic peak against deep phthalo blue, gold catching the summit first, mist tapped in at the base and fan-brush evergreens in the snow; it reads as a mountain from across the room."
+   },
+   {
+    "set": "Evergreen Stream",
+    "id": "p02",
+    "why": "Classic Ross staging: dark pine curtains on both sides, a misty lavender forest behind, and the river bending down to a falls and a still, dark pool."
+   },
+   {
+    "set": "Golden Hour Glow",
+    "id": "p03",
+    "why": "A pulled-down reflection, a happy little cabin with a lit window and a dark foreground bank under an alizarin-and-gold sky: an evening off his easel."
+   }
+  ],
+  "winner": {
+   "id": "p03",
+   "why": "The light is the subject. The sun, its smooth bloom and the gold column on still water make one clear place for the eye, the whole palette sits in one warm key, and it holds up at every size."
+  },
+  "ranking": [
+   "p03",
+   "p01",
+   "p02"
+  ],
+  "lines": [
+   {
+    "id": "p03",
+    "line": "Bless that white sun and the column under it; next time, let the tall pine's branches droop and overlap so it stands as a tree, not a stack of plates."
+   },
+   {
+    "id": "p01",
+    "line": "A fine morning mountain; I can see the day it gets broad, confident knife cuts on the lower slopes and a deeper shadow side, and then it sings."
+   },
+   {
+    "id": "p02",
+    "line": "The pines and the misty depth are right; give the falls more room and cut those rocks with a knife, and this little stream becomes the heart of the picture."
+   }
+  ],
+  "judges": [
+   {
+    "lens": "Bob Ross: does it look like it came off his easel in one episode (his palette, his order of painting, his brush and knife marks, at every scale)?",
+    "best_per_set": [
+     {
+      "set": "Snowcap Morning",
+      "id": "p01",
+      "why": "It is the classic Ross mountain: a Prussian/phthalo sky, a blue-violet mountain with knife-laid white highlights that follow the slope, mist tapped in at the base and fan-brush evergreens in the snow. The knife strokes are thin, though, and the clouds puffy, where his were scrubbed in."
+     },
+     {
+      "set": "Evergreen Stream",
+      "id": "p02",
+      "why": "Ross often built this exact layout: big dark framing pines, a misty backdrop of trees, and a falls dropping into a still pool with horizontal water lines. The lumpy brown rocks and the soft digital blur give it away as not his."
+     },
+     {
+      "set": "Golden Hour Glow",
+      "id": "p03",
+      "why": "It has an alizarin-and-yellow sunset, a reflection pulled straight down and then swiped across with horizontal lines, a happy little cabin with a lit window, and a dark Van Dyke bank in the foreground. That is a Joy of Painting episode almost frame for frame."
+     }
+    ],
+    "overall": {
+     "id": "p03",
+     "why": "Its wet-on-wet reflection, the cabin and the dark foreground bank make it the most convincingly from his easel of the three. Only the stacked-disc pine on the right breaks the spell."
+    },
+    "ranking": [
+     {
+      "id": "p03",
+      "score": 8,
+      "why": "The palette, the pulled-down reflection, the glowing cabin and the dark foreground bank are pure Ross. The tall pine, though, reads as stacked discs instead of a fan-brush tree tapped in with a knife highlight."
+     },
+     {
+      "id": "p01",
+      "score": 7.6,
+      "why": "The order of painting is right (sky, mountain, knife snow, mist, evergreens) and it reads as Ross from across the room. Close up, the snow is scratchy streaks instead of broad knife cuts, the clouds are cartoon puffs, and the shadow side lacks his dark, firm contrast."
+     },
+     {
+      "id": "p02",
+      "score": 6.8,
+      "why": "The composition and greens are textbook Ross, with yellow-tipped highlights on the pines. The rocks are flat brown lumps with no knife-highlighted edge, and the blurred mid-ground looks airbrushed, not wet-on-wet."
+     }
+    ]
+   },
+   {
+    "lens": "Craft: drawing quality, subject true to life and iconic, clear hierarchy, color harmony and contrast, detail at every scale, nothing muddy, broken or cut off.",
+    "best_per_set": [
+     {
+      "set": "Snowcap Morning",
+      "id": "p01",
+      "why": "A clean, iconic pyramid peak with a sunlit snow face, a clear sky-peak-forest hierarchy and atmospheric depth from the misty valley and the second summit."
+     },
+     {
+      "set": "Evergreen Stream",
+      "id": "p02",
+      "why": "The only piece in the set; the framing pines and layered misty forest give real depth, even though the falls themselves are underdrawn."
+     },
+     {
+      "set": "Golden Hour Glow",
+      "id": "p03",
+      "why": "The most controlled palette in the run: the sun glow, the warm-to-violet sky and the lake reflection all sit in one harmonious key with strong value contrast."
+     }
+    ],
+    "overall": {
+     "id": "p03",
+     "why": "Its color harmony, believable mirrored reflection and clear focal sun make it the most finished, painterly result, with only minor drawing flaws (the stacked-disc pine)."
+    },
+    "ranking": [
+     {
+      "id": "p03",
+      "score": 7.6,
+      "why": "A rich, unified sunset palette with a convincing reflection and a clear focal glow; the right-hand pine reads as stacked discs and the foreground shore goes a little murky."
+     },
+     {
+      "id": "p01",
+      "score": 7,
+      "why": "An iconic, readable mountain with good aerial perspective and nicely detailed snow-dusted firs, but the snow on the face is slashy, uniform strokes and the hard ridge line looks graphic rather than true to life."
+     },
+     {
+      "id": "p02",
+      "score": 5.6,
+      "why": "The flanking pines and misty depth are solid, but the waterfall, the subject, is small and muddy, the rocks look like glossy brown buns, and the stream's path down the slope doesn't read."
+     }
+    ]
+   },
+   {
+    "lens": "FOR THE SITE: does it hold up at its real size on the site, and is it memorable?",
+    "best_per_set": [
+     {
+      "set": "Snowcap Morning",
+      "id": "p01",
+      "why": "The single sharp peak against deep blue still reads as an instant icon at 160px, though the pale glow is too faint to say \"morning\"."
+     },
+     {
+      "set": "Evergreen Stream",
+      "id": "p02",
+      "why": "The only entry in the set: it frames the falls well with dark pines, but the waterfall goes small and gets lost at site size."
+     },
+     {
+      "set": "Golden Hour Glow",
+      "id": "p03",
+      "why": "The blazing magenta-to-gold sky and its long reflection make it the most striking image of the three at any size."
+     }
+    ],
+    "overall": {
+     "id": "p03",
+     "why": "It is the one a visitor remembers: a bold, warm palette, a clear sun-on-water focal point, and a lit cabin window that rewards a closer look, and it survives the thumbnail better than the others."
+    },
+    "ranking": [
+     {
+      "id": "p03",
+      "score": 8.4,
+      "why": "Rich color and a centered sun with its reflection pop even at thumbnail size, though the dark lower-left foreground is muddy at full size."
+     },
+     {
+      "id": "p01",
+      "score": 7.3,
+      "why": "It has a strong, clean silhouette that holds up small, but the scratchy white strokes on the slope and the cool, flat light make it feel more generic than memorable."
+     },
+     {
+      "id": "p02",
+      "score": 5.9,
+      "why": "Busy pine walls crowd a small central waterfall, and the brown rocks look like cookies, so at site size it turns into a green blur with no clear hook."
+     }
+    ]
+   }
+  ]
+ }
+}
